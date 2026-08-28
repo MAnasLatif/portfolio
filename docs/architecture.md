@@ -4,13 +4,12 @@
 
 This repository contains the public portfolio of M. Anas Latif. Its primary
 audiences are recruiters, prospective clients, and engineering collaborators.
-Future product modules will present a profile, professional experience,
-selected projects, and contact paths.
+The product presents a profile, technical range, public GitHub statistics,
+selected projects, original writing, working references, and contact paths.
 
-The initial milestone established the application foundation. The UI phase
-begins with a decorative animated space background, responsive primary
-navigation, and an introductory hero; deeper portfolio content and interactive
-workflows remain deferred.
+The accepted UI is a dark, editorial multipage experience with a decorative
+animated space background. Its information architecture follows eight top-level
+routes: Home, About, Stats, Utilities, Blogs, Books, Certificates, and Projects.
 
 ## Decisions
 
@@ -33,22 +32,28 @@ workflows remain deferred.
 ## Module ownership
 
 - `src/app/` owns routes, layouts, metadata, and route boundaries.
-- Route-specific implementation will remain colocated with its route.
-- `src/components/` will contain only components reused across routes.
-- `src/lib/` owns cross-cutting infrastructure and validated configuration.
+- Route-specific implementation and article bodies remain colocated with their
+	route.
+- `src/components/` owns the shared site header, footer, and Canvas background.
+- `src/lib/portfolio-content.ts` owns typed content shared by Home, Projects, and
+	Blogs.
+- `src/lib/env/` owns validated configuration.
 - `src/types/` will contain shared serializable contracts when reuse exists.
 - `docs/` contains durable architecture and operational decisions.
 - `docs/temp/` is ignored and reserved for disposable AI-created artifacts.
 
-Server Components are the default. Client Components will be introduced only
-at the smallest boundary required by an interaction. The home route's
-`SpaceBackground` is a client boundary because it draws through the Canvas API.
-It is decorative, ignores pointer input, respects reduced-motion preferences,
-and pauses when the page is hidden. The effect is implemented locally instead
-of adding an animation runtime because the reference uses the same small Canvas
-particle loop.
+Server Components are the default. Client Components exist only where browser
+APIs or framework recovery require them. `SpaceBackground` draws through Canvas,
+ignores pointer input, respects reduced motion, and pauses when the page is
+hidden. `SiteHeader` owns the responsive menu and route-aware navigation. The
+error boundaries are client-side so they can log failures and invoke recovery.
 
-The home route also owns its `SiteHeader` and `HeroHeader`. The hero remains a
-Server Component, while only the responsive menu is client-side. Navigation
-links point to confirmed public destinations and do not introduce placeholder
-routes or unverified contact details.
+All top-level routes are statically generated. Blog article metadata is shared
+with Home, while article bodies remain under `src/app/blogs/_content/`. The
+dynamic article route enumerates every supported slug through
+`generateStaticParams`; unknown slugs resolve to the shared not-found boundary.
+
+Public claims are limited to information verified from the linked GitHub and
+LinkedIn profiles. Projects link directly to source. Books and Certificates use
+transparent editorial states when no verified personal reading list or public
+credential is available instead of manufacturing content.

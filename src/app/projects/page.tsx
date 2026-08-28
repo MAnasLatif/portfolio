@@ -66,7 +66,7 @@ export default function ProjectsPage() {
                 ))}
                 {project.stars > 0 ? (
                   <span className="ml-auto font-mono text-[10px] text-white/30">
-                    {project.stars} stars
+                    {project.stars} {project.stars === 1 ? "star" : "stars"}
                   </span>
                 ) : null}
               </div>

@@ -1,17 +1,16 @@
 # M. Anas Latif Portfolio
 
 The public developer portfolio for M. Anas Latif, built for recruiters,
-prospective clients, and engineering collaborators. The application remains an
-early foundation: its first visual layer includes a decorative animated
-starfield, responsive primary navigation, and an introductory hero. Additional
-portfolio content and interactive features will be implemented in later phases.
+prospective clients, and engineering collaborators. It is a statically generated
+multipage portfolio with a decorative animated starfield, responsive navigation,
+original editorial content, and verified links to public work.
 
-## Planned modules
+## Portfolio sections
 
-- Profile and professional positioning
-- Experience and capabilities
-- Selected projects and open-source work
-- Contact and external profile links
+- Home overview with capabilities, selected projects, writing, and principles
+- About, public GitHub statistics, and working utilities
+- Projects, blogs with article detail pages, books and references, and credentials
+- Shared contact paths through GitHub and LinkedIn
 
 ## Architecture decisions
 
@@ -19,7 +18,7 @@ portfolio content and interactive features will be implemented in later phases.
 | --- | --- |
 | Application type | Public developer portfolio |
 | Package managers | npm and Bun |
-| Database and data access | None; future content remains local and typed |
+| Database and data access | None; portfolio content is local and typed |
 | Authentication and authorization | None |
 | Application boundary | Server Components; no Server Actions required yet |
 | HTTP APIs and external services | None |
@@ -42,25 +41,25 @@ the rationale behind the intentionally small foundation.
 - Zod
 
 No UI library, icon package, animation runtime, database client, authentication
-library, or client data-fetching library is installed. The space background and
-responsive navigation are route-local components, so they add no runtime
-dependency.
+library, or client data-fetching library is installed. The shared space
+background uses a small Canvas loop, so it adds no runtime dependency.
 
 ## Repository structure
 
 ```text
 src/
-├── app/             # Routes, metadata, providers, and route boundaries
-└── lib/
-    └── env/         # Typed server and client environment contracts
+├── app/             # Routes, route content, metadata, and boundaries
+├── components/      # Shared site shell components
+└── lib/             # Typed shared portfolio content and infrastructure
 docs/
 ├── architecture.md  # Durable architecture decisions
 └── temp/            # Ignored AI-created temporary files
 ```
 
-Route-specific components, content, actions, schemas, and types should remain
-colocated with their route. Shared top-level modules should be introduced only
-after genuine reuse exists.
+Route-specific components and article bodies remain colocated with their route.
+The site shell lives in `src/components/`, while project, article summary, skill,
+and principle data shared by multiple routes lives in
+`src/lib/portfolio-content.ts`.
 
 ## Requirements
 
@@ -103,14 +102,16 @@ The application is available at `http://localhost:3000` by default.
 | `npm run lint` | `bun run lint` | Run Biome lint rules |
 | `npm run typecheck` | `bun run typecheck` | Run strict TypeScript checks |
 
-No automated test suite exists yet because the skeleton has no product logic.
-Add focused Bun tests with the first behavior that needs them.
+No automated test suite exists yet because the portfolio has no domain logic.
+Static generation, strict types, Biome, and browser checks cover the current
+surface. Add focused Bun tests with the first behavior that needs them.
 
 ## Data and API conventions
 
-The portfolio is currently statically generated. Server Components are the
-default, and there are no Server Actions, Route Handlers, internal APIs, or
-external service adapters.
+The portfolio is statically generated. Server Components are the default, and
+there are no Server Actions, Route Handlers, internal APIs, or external service
+adapters. The only Client Components are the Canvas animation, responsive
+navigation, and required error boundaries.
 
 If future requirements introduce untrusted input, validate it with Zod at the
 boundary. Keep privileged operations server-only and return serializable DTOs
