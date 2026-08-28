@@ -1,9 +1,10 @@
 # M. Anas Latif Portfolio
 
 The public developer portfolio for M. Anas Latif, built for recruiters,
-prospective clients, and engineering collaborators. This initial version is an
-application skeleton only: visual design, portfolio content, and interactive
-features will be implemented in later phases.
+prospective clients, and engineering collaborators. The application remains an
+early foundation: its first visual layer includes a decorative animated
+starfield, responsive primary navigation, and an introductory hero. Additional
+portfolio content and interactive features will be implemented in later phases.
 
 ## Planned modules
 
@@ -41,7 +42,9 @@ the rationale behind the intentionally small foundation.
 - Zod
 
 No UI library, icon package, animation runtime, database client, authentication
-library, or client data-fetching library is installed.
+library, or client data-fetching library is installed. The space background and
+responsive navigation are route-local components, so they add no runtime
+dependency.
 
 ## Repository structure
 
