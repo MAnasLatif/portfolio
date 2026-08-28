@@ -1,11 +1,41 @@
 {
   "version": 1,
   "skills": {
+    "create-agentsmd": {
+      "source": "github/awesome-copilot",
+      "sourceType": "github",
+      "skillPath": "skills/create-agentsmd/SKILL.md",
+      "computedHash": "bfbdbb76b17cca970d1d624e36ce72b6847860d740581c8865da796c1fef8552"
+    },
     "create-next-app": {
       "source": "MAnasLatif/skills",
       "sourceType": "github",
       "skillPath": "skills/create-next-app/SKILL.md",
       "computedHash": "ea38ab50c8cb2b80a4b28316830a4e8e888ae66e8f370cfe817b861883ea152b"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "computedHash": "b146008599c31057cef1c145774cea5d5afb30e8f43fa802e47a4b461419aaaf"
+    },
+    "motion-react": {
+      "source": "MAnasLatif/skills",
+      "sourceType": "github",
+      "skillPath": "skills/motion-react/SKILL.md",
+      "computedHash": "f867a5ead3fbd95119335ca0f0ea36ca06283da34d5eb2a892cca25bf22909c7"
+    },
+    "next-dev-loop": {
+      "source": "vercel/next.js",
+      "sourceType": "github",
+      "skillPath": "skills/next-dev-loop/SKILL.md",
+      "computedHash": "d2a697a0a0429cad0bb7264644115457f588d4ed1007eeb0bb7f965b1185fa6e"
+    },
+    "tailwind-v4": {
+      "source": "MAnasLatif/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tailwind-v4/SKILL.md",
+      "computedHash": "ea0544253558dfd373b53fa8107313cd9f55afc82b3bb1d7aa14b30017f6d1e2"
     }
   }
 }

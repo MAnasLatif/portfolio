@@ -11,6 +11,7 @@
 
 # Tooling and generated output
 /.agents/
+/.claude/
 /docs/temp/
 *.tsbuildinfo
 next-env.d.ts
