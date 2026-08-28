@@ -1,18 +1,6 @@
 {
   "version": 1,
   "skills": {
-    "create-agentsmd": {
-      "source": "github/awesome-copilot",
-      "sourceType": "github",
-      "skillPath": "skills/create-agentsmd/SKILL.md",
-      "computedHash": "bfbdbb76b17cca970d1d624e36ce72b6847860d740581c8865da796c1fef8552"
-    },
-    "create-next-app": {
-      "source": "MAnasLatif/skills",
-      "sourceType": "github",
-      "skillPath": "skills/create-next-app/SKILL.md",
-      "computedHash": "ea38ab50c8cb2b80a4b28316830a4e8e888ae66e8f370cfe817b861883ea152b"
-    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "sourceType": "github",
