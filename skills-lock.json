@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "create-next-app": {
+      "source": "MAnasLatif/skills",
+      "sourceType": "github",
+      "skillPath": "skills/create-next-app/SKILL.md",
+      "computedHash": "ea38ab50c8cb2b80a4b28316830a4e8e888ae66e8f370cfe817b861883ea152b"
+    }
+  }
+}
