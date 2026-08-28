@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { SpaceBackground } from "@/components/space-background";
+
 import "./globals.css";
 import { Providers } from "./providers";
 
@@ -29,7 +33,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body className={`${spaceGrotesk.variable} ${ibmPlexMono.variable}`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="relative isolate min-h-svh overflow-x-hidden bg-[#03050a] text-white">
+            <SpaceBackground />
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </div>
+        </Providers>
       </body>
     </html>
   );

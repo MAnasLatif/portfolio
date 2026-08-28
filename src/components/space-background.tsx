@@ -39,9 +39,7 @@ export function SpaceBackground() {
     const canvas = canvasRef.current;
     const context = canvas?.getContext("2d");
 
-    if (!canvas || !context) {
-      return;
-    }
+    if (!canvas || !context) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let particles: Particle[] = [];
