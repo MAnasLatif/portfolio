@@ -72,24 +72,24 @@ export function HeroHeader() {
         </div>
       </div>
 
-      <div className="relative hidden min-h-140 lg:block">
-        <div className="absolute inset-8 border border-dashed border-white/18" />
+      <div className="relative aspect-4/3 sm:aspect-16/10 lg:aspect-auto lg:min-h-140">
+        <div className="absolute inset-3 border border-dashed border-white/18 sm:inset-6 lg:inset-8" />
         <div className="absolute inset-x-0 top-1/2 h-px bg-white/10" />
         <div className="absolute inset-y-0 left-1/2 w-px bg-white/10" />
-        <div className="absolute inset-16 overflow-hidden border border-white/14 bg-[#080a0f]/72 backdrop-blur-sm">
+        <div className="absolute inset-6 overflow-hidden border border-white/14 bg-[#080a0f]/72 backdrop-blur-sm sm:inset-10 lg:inset-16">
           <Image
             src="/manaslatif.jpeg"
             alt="M. Anas Latif working at his laptop"
             fill
             priority
-            sizes="(min-width: 1024px) 22vw, 0px"
+            sizes="(max-width: 639px) calc(100vw - 88px), (max-width: 1023px) calc(100vw - 144px), 22vw"
             className="object-cover object-[58%_center]"
           />
         </div>
-        <p className="absolute bottom-4 left-4 font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
+        <p className="absolute bottom-1 left-1 font-mono text-[9px] uppercase tracking-[0.22em] text-white/30 sm:bottom-3 sm:left-3 sm:text-[10px] sm:tracking-[0.3em] lg:bottom-4 lg:left-4">
           Engineering / Product / Design
         </p>
-        <p className="absolute right-4 top-4 font-mono text-[10px] uppercase tracking-[0.3em] text-white/30 [writing-mode:vertical-rl]">
+        <p className="absolute right-1 top-1 font-mono text-[9px] uppercase tracking-[0.22em] text-white/30 [writing-mode:vertical-rl] sm:right-3 sm:top-3 sm:text-[10px] sm:tracking-[0.3em] lg:right-4 lg:top-4">
           M. Anas Latif
         </p>
       </div>
