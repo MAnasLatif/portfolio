@@ -1,6 +1,7 @@
 import TbBrandGithub from "@mal-icons/react/tb/TbBrandGithub";
 import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
 import TbSend from "@mal-icons/react/tb/TbSend";
+import Image from "next/image";
 
 export function HeroHeader() {
   return (
@@ -71,14 +72,19 @@ export function HeroHeader() {
         </div>
       </div>
 
-      <div className="relative hidden min-h-140 lg:block" aria-hidden="true">
+      <div className="relative hidden min-h-140 lg:block">
         <div className="absolute inset-8 border border-dashed border-white/18" />
         <div className="absolute inset-x-0 top-1/2 h-px bg-white/10" />
         <div className="absolute inset-y-0 left-1/2 w-px bg-white/10" />
-        <div className="absolute inset-16 grid place-items-center border border-white/14 bg-[#080a0f]/72 backdrop-blur-sm">
-          <span className="text-[11rem] font-black leading-none text-white/5.5">
-            ML
-          </span>
+        <div className="absolute inset-16 overflow-hidden border border-white/14 bg-[#080a0f]/72 backdrop-blur-sm">
+          <Image
+            src="/manaslatif.jpeg"
+            alt="M. Anas Latif working at his laptop"
+            fill
+            priority
+            sizes="(min-width: 1024px) 22vw, 0px"
+            className="object-cover object-[58%_center]"
+          />
         </div>
         <p className="absolute bottom-4 left-4 font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
           Engineering / Product / Design
