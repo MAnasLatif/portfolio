@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { Ubuntu, Ubuntu_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 
 import { SiteFooter } from "@/components/site-footer";
@@ -9,15 +9,16 @@ import { SpaceBackground } from "@/components/space-background";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const spaceGrotesk = Space_Grotesk({
+const ubuntu = Ubuntu({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-ubuntu",
+  weight: ["300", "400", "500", "700"],
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const ubuntuMono = Ubuntu_Mono({
   subsets: ["latin"],
-  variable: "--font-ibm-plex-mono",
-  weight: ["400", "500", "600"],
+  variable: "--font-ubuntu-mono",
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -46,7 +47,7 @@ type RootLayoutProps = Readonly<{
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.variable} ${ibmPlexMono.variable}`}>
+      <body className={`${ubuntu.variable} ${ubuntuMono.variable}`}>
         <Providers>
           <div className="relative isolate min-h-svh overflow-x-hidden bg-[#03050a] text-white">
             <SpaceBackground />

@@ -5,9 +5,13 @@ html {
 }
 
 body {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-ubuntu), sans-serif;
+}
+
+.font-sans {
+  font-family: var(--font-ubuntu), sans-serif;
 }
 
 .font-mono {
-  font-family: var(--font-ibm-plex-mono), monospace;
+  font-family: var(--font-ubuntu-mono), monospace;
 }
