@@ -2,12 +2,16 @@
 
 import { useState } from "react";
 
-import { skills, type TechnologyName } from "@/lib/portfolio-content";
+import {
+  favoriteTechnologies,
+  skills,
+  type TechnologyName,
+} from "@/lib/portfolio-content";
 
 import { TechnologyIcon } from "./technology-icon";
 
 type SkillName = (typeof skills)[number]["name"];
-type SkillFilter = "All" | SkillName;
+type SkillFilter = "Favorite" | "All" | SkillName;
 
 const allTechnologies = Array.from(
   new Set(skills.flatMap((skill) => skill.technologies)),
@@ -17,6 +21,7 @@ const filters: ReadonlyArray<{
   name: SkillFilter;
   count: number;
 }> = [
+  { name: "Favorite", count: favoriteTechnologies.length },
   { name: "All", count: allTechnologies.length },
   ...skills.map((skill) => ({
     name: skill.name,
@@ -25,12 +30,14 @@ const filters: ReadonlyArray<{
 ];
 
 export function SkillsExplorer() {
-  const [activeFilter, setActiveFilter] = useState<SkillFilter>("All");
+  const [activeFilter, setActiveFilter] = useState<SkillFilter>("Favorite");
   const technologies: readonly TechnologyName[] =
-    activeFilter === "All"
-      ? allTechnologies
-      : (skills.find((skill) => skill.name === activeFilter)?.technologies ??
-        []);
+    activeFilter === "Favorite"
+      ? favoriteTechnologies
+      : activeFilter === "All"
+        ? allTechnologies
+        : (skills.find((skill) => skill.name === activeFilter)?.technologies ??
+          []);
 
   return (
     <div className="mt-8">
