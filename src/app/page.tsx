@@ -11,6 +11,7 @@ import {
 
 import { HeroHeader } from "./_components/hero-header";
 import { SectionHeading } from "./_components/section-heading";
+import { SkillsExplorer } from "./_components/skills-explorer";
 import { TechnologyIcon } from "./_components/technology-icon";
 
 const skillsByTechnologyCount = [...skills].sort(
@@ -18,41 +19,75 @@ const skillsByTechnologyCount = [...skills].sort(
     secondSkill.technologies.length - firstSkill.technologies.length,
 );
 
+const technologyCount = new Set(skills.flatMap((skill) => skill.technologies))
+  .size;
+
+const featuredTechnologies = [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Tailwind CSS",
+  "Node.js",
+  "Python",
+  "Docker",
+  "AWS",
+] as const;
+
 export default function HomePage() {
   return (
     <main>
       <HeroHeader />
 
       <section className="relative z-10 mx-auto max-w-360 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-        <SectionHeading
-          index="01"
-          eyebrow="Technical range"
-          title="Skills & technologies"
-          description="A product-minded toolkit for moving from an ambiguous problem to a maintainable digital product."
-        />
-        <div className="mt-14 grid border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-3">
-          {skillsByTechnologyCount.map((skill, skillIndex) => (
-            <article
-              key={skill.name}
-              className="border-r border-b border-white/10 bg-[#080a0f]/72 px-0 py-8 backdrop-blur-sm sm:px-8"
-            >
-              <p className="px-5 font-mono text-[10px] uppercase tracking-[0.22em] text-white/30 sm:px-0">
-                {String(skillIndex + 1).padStart(2, "0")} / {skill.name}
-              </p>
-              <ul className="mt-7 space-y-3">
-                {skill.technologies.map((technology) => (
-                  <li
-                    key={technology}
-                    className="flex items-center justify-between border-b border-white/7 px-5 pb-3 text-lg font-semibold text-white/74 last:border-0 sm:px-0"
-                  >
-                    {technology}
-                    <TechnologyIcon name={technology} />
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
+        <div className="grid gap-10 border-b border-white/12 pb-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div>
+            <p className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-white/35">
+              <span className="h-px w-5 bg-white/30" />
+              Technical expertise
+            </p>
+            <h2 className="mt-4 text-4xl font-black leading-none text-white sm:text-6xl">
+              Skills &amp; Technologies
+            </h2>
+            <p className="mt-5 max-w-2xl border-l border-white/25 pl-4 text-base leading-7 text-white/48">
+              A product-minded toolkit for moving from an ambiguous problem to a
+              maintainable digital product.
+            </p>
+          </div>
+
+          <div className="relative min-w-64 text-left lg:text-right">
+            <span className="absolute -right-2 -top-14 -z-10 font-mono text-[9rem] font-bold leading-none text-white/3">
+              01
+            </span>
+            <div className="flex items-end gap-3 lg:justify-end">
+              <strong className="text-6xl font-black leading-none text-white sm:text-7xl">
+                {technologyCount}
+              </strong>
+              <span className="pb-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/30">
+                Technologies
+              </span>
+            </div>
+            <p className="mt-3 max-w-sm font-mono text-[9px] uppercase leading-5 tracking-[0.15em] text-white/25 lg:ml-auto">
+              {skillsByTechnologyCount
+                .slice(0, 4)
+                .map((skill) => `${skill.name} (${skill.technologies.length})`)
+                .join(" · ")}
+            </p>
+          </div>
         </div>
+
+        <ul className="flex overflow-hidden border-b border-white/12 py-3">
+          {featuredTechnologies.map((technology) => (
+            <li
+              key={technology}
+              className="flex shrink-0 items-center gap-2 border-r border-white/10 px-5 font-mono text-[9px] uppercase tracking-[0.16em] text-white/38 first:pl-0"
+            >
+              <TechnologyIcon name={technology} />
+              {technology}
+            </li>
+          ))}
+        </ul>
+
+        <SkillsExplorer />
       </section>
 
       <section className="relative z-10 border-y border-white/10 bg-[#080a0f]/88 text-white backdrop-blur-sm">
