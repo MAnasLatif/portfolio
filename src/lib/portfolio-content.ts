@@ -1,15 +1,100 @@
-export const skillGroups = [
+export const skills = [
   {
-    label: "Product engineering",
-    skills: ["TypeScript", "React", "Next.js", "Node.js", "MERN"],
+    name: "Languages & frameworks",
+    technologies: [
+      "TypeScript",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Sass",
+      "Python",
+      "C++",
+      "Go",
+    ],
   },
   {
-    label: "Experience design",
-    skills: ["UX design", "Design systems", "Accessibility", "Prototyping"],
+    name: "Frontend",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "Hero UI",
+      "Shadcn UI",
+      "Radix UI",
+      "Chakra UI",
+      "Material UI",
+      "Ant Design",
+      "Headless UI",
+      "Bootstrap",
+      "Framer Motion",
+    ],
   },
   {
-    label: "Developer systems",
-    skills: ["Docker", "CLI tooling", "AI agents", "GitHub Actions"],
+    name: "Mobile app",
+    technologies: ["React Native", "Expo"],
+  },
+  {
+    name: "Desktop app",
+    technologies: ["Electron"],
+  },
+  {
+    name: "Backend",
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "Next.js",
+      "REST",
+      "Socket.io",
+      "Prisma",
+      "GraphQL",
+      "MongoDB",
+      "PostgreSQL",
+      "Redis",
+    ],
+  },
+  {
+    name: "Tooling",
+    technologies: [
+      "ESLint",
+      "Prettier",
+      "Turborepo",
+      "npm",
+      "Vite",
+      "pnpm",
+      "GitHub Actions",
+      "Vitest",
+      "Playwright",
+      "Postman",
+    ],
+  },
+  {
+    name: "Design & prototyping",
+    technologies: ["Figma", "Adobe XD", "Canva", "Sketch"],
+  },
+  {
+    name: "DevOps & CI/CD",
+    technologies: [
+      "Docker",
+      "Kubernetes",
+      "GitHub Actions",
+      "Terraform",
+      "Jenkins",
+    ],
+  },
+  {
+    name: "Cloud & hosting",
+    technologies: [
+      "Vercel",
+      "AWS",
+      "Azure",
+      "Google Cloud",
+      "DigitalOcean",
+      "Linode",
+    ],
+  },
+  {
+    name: "Testing",
+    technologies: ["Jest", "Mocha", "Chai", "Cypress"],
   },
 ] as const;
 

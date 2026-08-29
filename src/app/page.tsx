@@ -6,7 +6,7 @@ import {
   articles,
   principles,
   projects,
-  skillGroups,
+  skills,
 } from "@/lib/portfolio-content";
 
 import { HeroHeader } from "./_components/hero-header";
@@ -24,22 +24,22 @@ export default function HomePage() {
           title="Skills & technologies"
           description="A product-minded toolkit for moving from an ambiguous problem to a maintainable digital product."
         />
-        <div className="mt-14 grid border-t border-white/10 lg:grid-cols-3">
-          {skillGroups.map((group, groupIndex) => (
+        <div className="mt-14 grid gap-px border-y border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          {skills.map((skill, skillIndex) => (
             <article
-              key={group.label}
-              className="border-b border-white/10 py-8 lg:border-r lg:px-8 lg:first:pl-0 lg:last:border-r-0 lg:last:pr-0"
+              key={skill.name}
+              className="bg-[#03050a] px-0 py-8 sm:px-8"
             >
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/30">
-                0{groupIndex + 1} / {group.label}
+                {String(skillIndex + 1).padStart(2, "0")} / {skill.name}
               </p>
               <ul className="mt-7 space-y-3">
-                {group.skills.map((skill) => (
+                {skill.technologies.map((technology) => (
                   <li
-                    key={skill}
+                    key={technology}
                     className="flex items-center justify-between border-b border-white/7 pb-3 text-lg font-semibold text-white/74 last:border-0"
                   >
-                    {skill}
+                    {technology}
                     <span className="size-1 bg-white/25" aria-hidden="true" />
                   </li>
                 ))}
