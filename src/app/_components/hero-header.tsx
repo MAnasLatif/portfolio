@@ -2,11 +2,6 @@ export function HeroHeader() {
   return (
     <section className="relative z-10 mx-auto grid min-h-svh max-w-360 items-center gap-14 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.75fr)] lg:px-12 lg:pb-20 lg:pt-32">
       <div className="max-w-4xl">
-        <div className="mb-9 inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/4 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/70 sm:text-xs">
-          <span className="size-1.5 rounded-full bg-emerald-300" />
-          Software / Product / Experience
-        </div>
-
         <p className="mb-4 font-mono text-xs uppercase tracking-[0.36em] text-white/38 sm:text-sm">
           Hi, I'm
         </p>
