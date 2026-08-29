@@ -1,5 +1,5 @@
-import LuArrowRight from "@mal-icons/react/lu/LuArrowRight";
-import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
+import TbArrowRight from "@mal-icons/react/tb/TbArrowRight";
+import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
 import Link from "next/link";
 
 import {
@@ -87,7 +87,7 @@ export default function HomePage() {
                   <span>
                     0{index + 1} / {project.eyebrow}
                   </span>
-                  <LuExternalLink
+                  <TbExternalLink
                     className="transition-transform group-hover:translate-x-1"
                     size={14}
                   />
@@ -117,7 +117,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
             >
               View all projects
-              <LuArrowRight size={16} />
+              <TbArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function HomePage() {
               </span>
               <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white/28">
                 {article.readTime}
-                <LuArrowRight size={13} />
+                <TbArrowRight size={13} />
               </span>
             </Link>
           ))}
@@ -161,7 +161,7 @@ export default function HomePage() {
             className="inline-flex items-center gap-2 border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
           >
             Read all notes
-            <LuArrowRight size={16} />
+            <TbArrowRight size={16} />
           </Link>
         </div>
       </section>

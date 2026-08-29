@@ -1,6 +1,6 @@
-import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
-import LuSend from "@mal-icons/react/lu/LuSend";
-import SiGithub from "@mal-icons/react/si/SiGithub";
+import TbBrandGithub from "@mal-icons/react/tb/TbBrandGithub";
+import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
+import TbSend from "@mal-icons/react/tb/TbSend";
 
 export function HeroHeader() {
   return (
@@ -33,7 +33,7 @@ export function HeroHeader() {
             rel="noreferrer"
             className="inline-flex h-14 items-center justify-center gap-2 bg-white px-7 text-sm font-bold text-[#080a0f] transition-colors hover:bg-white/80"
           >
-            <SiGithub size={18} />
+            <TbBrandGithub size={18} />
             Explore GitHub
           </a>
           <a
@@ -42,7 +42,7 @@ export function HeroHeader() {
             rel="noreferrer"
             className="inline-flex h-14 items-center justify-center gap-2 border border-white/20 px-7 text-sm font-bold text-white transition-colors hover:border-white/55"
           >
-            <LuSend size={18} />
+            <TbSend size={18} />
             Get in touch
           </a>
         </div>
@@ -57,7 +57,7 @@ export function HeroHeader() {
             className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
           >
             LinkedIn
-            <LuExternalLink size={11} />
+            <TbExternalLink size={11} />
           </a>
           <a
             href="https://github.com/MAnasLatif"
@@ -66,7 +66,7 @@ export function HeroHeader() {
             className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
           >
             GitHub
-            <SiGithub size={11} />
+            <TbBrandGithub size={11} />
           </a>
         </div>
       </div>

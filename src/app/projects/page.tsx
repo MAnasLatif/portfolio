@@ -1,4 +1,4 @@
-import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
+import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
 import type { Metadata } from "next";
 
 import { projects } from "@/lib/portfolio-content";
@@ -46,7 +46,7 @@ export default function ProjectsPage() {
                 </span>
                 <span className="inline-flex items-center gap-2 transition-transform group-hover:translate-x-1">
                   View
-                  <LuExternalLink size={14} />
+                  <TbExternalLink size={14} />
                 </span>
               </div>
               <div className="my-auto py-14">

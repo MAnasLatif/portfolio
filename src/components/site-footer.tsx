@@ -1,4 +1,4 @@
-import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
+import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
 import Link from "next/link";
 
 const footerLinks = [
@@ -35,7 +35,7 @@ export function SiteFooter() {
                 className="inline-flex items-center gap-1.5 text-sm text-white/50 transition-colors hover:text-white"
               >
                 {link.label}
-                <LuExternalLink size={12} />
+                <TbExternalLink size={12} />
               </a>
             ) : (
               <Link

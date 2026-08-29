@@ -1,4 +1,4 @@
-import LuArrowLeft from "@mal-icons/react/lu/LuArrowLeft";
+import TbArrowLeft from "@mal-icons/react/tb/TbArrowLeft";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -49,7 +49,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             href="/blogs"
             className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/35 transition-colors hover:text-white"
           >
-            <LuArrowLeft size={14} />
+            <TbArrowLeft size={14} />
             All writing
           </Link>
           <p className="mt-12 font-mono text-[10px] uppercase tracking-[0.22em] text-white/35">

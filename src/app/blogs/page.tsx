@@ -1,4 +1,4 @@
-import LuArrowRight from "@mal-icons/react/lu/LuArrowRight";
+import TbArrowRight from "@mal-icons/react/tb/TbArrowRight";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -46,7 +46,7 @@ export default function BlogsPage() {
                 <span>{article.category}</span>
                 <span className="ml-3 inline-flex items-center justify-end gap-2">
                   {article.readTime}
-                  <LuArrowRight size={13} />
+                  <TbArrowRight size={13} />
                 </span>
               </span>
             </Link>

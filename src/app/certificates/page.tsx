@@ -1,4 +1,4 @@
-import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
+import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
 import type { Metadata } from "next";
 
 import { PageIntro } from "../_components/page-intro";
@@ -65,7 +65,7 @@ export default function CertificatesPage() {
                     <span>0{index + 1}</span>
                     <span className="inline-flex items-center gap-2">
                       {item.label}
-                      <LuExternalLink size={12} />
+                      <TbExternalLink size={12} />
                     </span>
                   </span>
                   <h2 className="mt-auto text-2xl font-bold text-white/80 transition-colors group-hover:text-white">

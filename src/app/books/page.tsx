@@ -1,4 +1,4 @@
-import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
+import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
 import type { Metadata } from "next";
 
 import { PageIntro } from "../_components/page-intro";
@@ -81,7 +81,7 @@ export default function BooksPage() {
                   </span>
                   <span className="flex items-end justify-between text-xl font-bold text-white/72 transition-colors group-hover:text-white">
                     {reference.title}
-                    <LuExternalLink className="shrink-0" size={18} />
+                    <TbExternalLink className="shrink-0" size={18} />
                   </span>
                 </a>
               </li>

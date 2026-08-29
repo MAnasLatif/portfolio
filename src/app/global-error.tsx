@@ -1,7 +1,7 @@
 "use client";
 
-import LuRefreshCw from "@mal-icons/react/lu/LuRefreshCw";
-import SiGithub from "@mal-icons/react/si/SiGithub";
+import TbBrandGithub from "@mal-icons/react/tb/TbBrandGithub";
+import TbRefresh from "@mal-icons/react/tb/TbRefresh";
 import { useEffect } from "react";
 
 type GlobalErrorProps = Readonly<{
@@ -35,14 +35,14 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
                 onClick={reset}
                 className="inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-bold text-[#080a0f]"
               >
-                <LuRefreshCw size={16} />
+                <TbRefresh size={16} />
                 Try again
               </button>
               <a
                 href="https://github.com/MAnasLatif"
                 className="inline-flex items-center gap-2 border border-white/20 px-6 py-3 text-sm font-bold text-white"
               >
-                <SiGithub size={16} />
+                <TbBrandGithub size={16} />
                 Open GitHub
               </a>
             </div>

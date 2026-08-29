@@ -1,8 +1,8 @@
 "use client";
 
-import LuMenu from "@mal-icons/react/lu/LuMenu";
-import LuSend from "@mal-icons/react/lu/LuSend";
-import LuX from "@mal-icons/react/lu/LuX";
+import TbMenu2 from "@mal-icons/react/tb/TbMenu2";
+import TbSend from "@mal-icons/react/tb/TbSend";
+import TbX from "@mal-icons/react/tb/TbX";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -93,7 +93,7 @@ export function SiteHeader() {
             className="hidden items-center gap-2 border border-white/18 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white/75 transition-colors hover:border-white/50 hover:text-white sm:inline-flex"
           >
             Let's talk
-            <LuSend size={14} />
+            <TbSend size={14} />
           </a>
           <button
             type="button"
@@ -103,7 +103,7 @@ export function SiteHeader() {
             onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
             className="grid size-9 place-items-center border border-white/18 text-white lg:hidden"
           >
-            {isMenuOpen ? <LuX size={18} /> : <LuMenu size={18} />}
+            {isMenuOpen ? <TbX size={18} /> : <TbMenu2 size={18} />}
           </button>
         </div>
       </div>
