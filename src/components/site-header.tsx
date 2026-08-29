@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -42,8 +43,15 @@ export function SiteHeader() {
           aria-label="M. Anas Latif, home"
           className="group flex shrink-0 items-center gap-3"
         >
-          <span className="grid size-9 place-items-center border border-white/35 text-sm font-black text-white transition-colors group-hover:border-white">
-            ML
+          <span className="grid size-9 place-items-center border border-white/35 transition-colors group-hover:border-white">
+            <Image
+              src="/mal.svg"
+              alt=""
+              width={28}
+              height={28}
+              priority
+              className="size-7"
+            />
           </span>
           <span className="hidden text-sm font-bold uppercase tracking-[0.16em] text-white/80 2xl:block">
             M. Anas Latif
