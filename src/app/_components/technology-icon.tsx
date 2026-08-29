@@ -1,53 +1,46 @@
 "use client";
 
 import { createIcon } from "@mal-icons/react";
+import AdAntDesign from "@mal-icons/react/ad/AdAntDesign";
+import BxlDigitalocean from "@mal-icons/react/bxl/BxlDigitalocean";
+import BxlGoLang from "@mal-icons/react/bxl/BxlGoLang";
+import DevElectron from "@mal-icons/react/dev/DevElectron";
+import DevGithubActions from "@mal-icons/react/dev/DevGithubActions";
+import DevJenkins from "@mal-icons/react/dev/DevJenkins";
+import DevKubernetes from "@mal-icons/react/dev/DevKubernetes";
 import DevLinode from "@mal-icons/react/dev/DevLinode";
+import DevMaterialUi from "@mal-icons/react/dev/DevMaterialUi";
 import DevPlaywright from "@mal-icons/react/dev/DevPlaywright";
-import SiAntdesign from "@mal-icons/react/si/SiAntdesign";
+import DevPostgresql from "@mal-icons/react/dev/DevPostgresql";
 import SiBootstrap from "@mal-icons/react/si/SiBootstrap";
 import SiChai from "@mal-icons/react/si/SiChai";
 import SiChakraui from "@mal-icons/react/si/SiChakraui";
 import SiCplusplus from "@mal-icons/react/si/SiCplusplus";
 import SiCss from "@mal-icons/react/si/SiCss";
-import SiCypress from "@mal-icons/react/si/SiCypress";
-import SiDigitalocean from "@mal-icons/react/si/SiDigitalocean";
-import SiDocker from "@mal-icons/react/si/SiDocker";
-import SiElectron from "@mal-icons/react/si/SiElectron";
 import SiEslint from "@mal-icons/react/si/SiEslint";
-import SiExpo from "@mal-icons/react/si/SiExpo";
-import SiExpress from "@mal-icons/react/si/SiExpress";
 import SiFigma from "@mal-icons/react/si/SiFigma";
 import SiFramer from "@mal-icons/react/si/SiFramer";
-import SiGithubactions from "@mal-icons/react/si/SiGithubactions";
-import SiGo from "@mal-icons/react/si/SiGo";
 import SiGooglecloud from "@mal-icons/react/si/SiGooglecloud";
 import SiGraphql from "@mal-icons/react/si/SiGraphql";
 import SiHeadlessui from "@mal-icons/react/si/SiHeadlessui";
 import SiHeroui from "@mal-icons/react/si/SiHeroui";
 import SiHtml5 from "@mal-icons/react/si/SiHtml5";
 import SiJavascript from "@mal-icons/react/si/SiJavascript";
-import SiJenkins from "@mal-icons/react/si/SiJenkins";
 import SiJest from "@mal-icons/react/si/SiJest";
-import SiKubernetes from "@mal-icons/react/si/SiKubernetes";
 import SiMocha from "@mal-icons/react/si/SiMocha";
-import SiMongodb from "@mal-icons/react/si/SiMongodb";
-import SiMui from "@mal-icons/react/si/SiMui";
 import SiNextdotjs from "@mal-icons/react/si/SiNextdotjs";
 import SiNodedotjs from "@mal-icons/react/si/SiNodedotjs";
 import SiNpm from "@mal-icons/react/si/SiNpm";
 import SiPnpm from "@mal-icons/react/si/SiPnpm";
-import SiPostgresql from "@mal-icons/react/si/SiPostgresql";
 import SiPostman from "@mal-icons/react/si/SiPostman";
 import SiPrettier from "@mal-icons/react/si/SiPrettier";
 import SiPrisma from "@mal-icons/react/si/SiPrisma";
 import SiPython from "@mal-icons/react/si/SiPython";
 import SiRadixui from "@mal-icons/react/si/SiRadixui";
-import SiReact from "@mal-icons/react/si/SiReact";
 import SiRedis from "@mal-icons/react/si/SiRedis";
 import SiSass from "@mal-icons/react/si/SiSass";
 import SiShadcnui from "@mal-icons/react/si/SiShadcnui";
 import SiSketch from "@mal-icons/react/si/SiSketch";
-import SiSocketdotio from "@mal-icons/react/si/SiSocketdotio";
 import SiTailwindcss from "@mal-icons/react/si/SiTailwindcss";
 import SiTerraform from "@mal-icons/react/si/SiTerraform";
 import SiTurborepo from "@mal-icons/react/si/SiTurborepo";
@@ -59,6 +52,10 @@ import TbApi from "@mal-icons/react/tb/TbApi";
 import TbBrandAdobeXd from "@mal-icons/react/tb/TbBrandAdobeXd";
 import TbBrandAws from "@mal-icons/react/tb/TbBrandAws";
 import TbBrandAzure from "@mal-icons/react/tb/TbBrandAzure";
+import TbBrandCypress from "@mal-icons/react/tb/TbBrandCypress";
+import TbBrandDocker from "@mal-icons/react/tb/TbBrandDocker";
+import TbBrandMongodb from "@mal-icons/react/tb/TbBrandMongodb";
+import TbBrandReact from "@mal-icons/react/tb/TbBrandReact";
 import TbBrandReactNative from "@mal-icons/react/tb/TbBrandReactNative";
 import type { ComponentType } from "react";
 
@@ -79,6 +76,33 @@ const CanvaIcon = createIcon("0 0 24 24", [
   ],
 ]);
 
+const ExpressIcon = createIcon("0 0 24 24", [
+  [
+    "path",
+    {
+      d: "M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.921 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957 6.272 6.272 0 01-7.306-.933 6.575 6.575 0 01-1.64-3.858c0-.235-.08-.455-.134-.666A88.33 88.33 0 010 11.577zm1.127-.286h9.654c-.06-3.076-2.001-5.258-4.59-5.278-2.882-.04-4.944 2.094-5.071 5.264z",
+    },
+  ],
+]);
+
+const ExpoIcon = createIcon("0 0 24 24", [
+  [
+    "path",
+    {
+      d: "M0 20.084c.043.53.23 1.063.718 1.778.58.849 1.576 1.315 2.303.567.49-.505 5.794-9.776 8.35-13.29a.761.761 0 011.248 0c2.556 3.514 7.86 12.785 8.35 13.29.727.748 1.723.282 2.303-.567.57-.835.728-1.42.728-2.046 0-.426-8.26-15.798-9.092-17.078-.8-1.23-1.044-1.498-2.397-1.542h-1.032c-1.353.044-1.597.311-2.398 1.542C8.267 3.991.33 18.758 0 19.77Z",
+    },
+  ],
+]);
+
+const SocketIoIcon = createIcon("0 0 24 24", [
+  [
+    "path",
+    {
+      d: "M11.9362.0137a12.1694 12.1694 0 00-2.9748.378C4.2816 1.5547.5678 5.7944.0918 10.6012c-.59 4.5488 1.7079 9.2856 5.6437 11.6345 3.8608 2.4179 9.0926 2.3199 12.8734-.223 3.3969-2.206 5.5118-6.2277 5.3858-10.2845-.058-4.0159-2.31-7.9167-5.7588-9.9796C16.354.5876 14.1431.0047 11.9362.0137zm-.063 1.696c4.9448-.007 9.7886 3.8137 10.2815 8.9245.945 5.6597-3.7528 11.4125-9.4875 11.5795-5.4538.544-10.7245-4.0798-10.8795-9.5566-.407-4.4338 2.5159-8.8346 6.6977-10.2995a9.1126 9.1126 0 013.3878-.647zm5.0908 3.2248c-2.6869 2.0849-5.2598 4.3078-7.8886 6.4567 1.2029.017 2.4118.016 3.6208.01 1.41-2.165 2.8589-4.3008 4.2678-6.4667zm-5.6647 7.6536c-1.41 2.166-2.86 4.3088-4.2699 6.4737 2.693-2.0799 5.2548-4.3198 7.9017-6.4557a255.4132 255.4132 0 00-3.6318-.018z",
+    },
+  ],
+]);
+
 const technologyIcons = {
   TypeScript: SiTypescript,
   JavaScript: SiJavascript,
@@ -87,30 +111,30 @@ const technologyIcons = {
   Sass: SiSass,
   Python: SiPython,
   "C++": SiCplusplus,
-  Go: SiGo,
-  React: SiReact,
+  Go: BxlGoLang,
+  React: TbBrandReact,
   "Next.js": SiNextdotjs,
   "Tailwind CSS": SiTailwindcss,
   "Hero UI": SiHeroui,
   "Shadcn UI": SiShadcnui,
   "Radix UI": SiRadixui,
   "Chakra UI": SiChakraui,
-  "Material UI": SiMui,
-  "Ant Design": SiAntdesign,
+  "Material UI": DevMaterialUi,
+  "Ant Design": AdAntDesign,
   "Headless UI": SiHeadlessui,
   Bootstrap: SiBootstrap,
   "Framer Motion": SiFramer,
   "React Native": TbBrandReactNative,
-  Expo: SiExpo,
-  Electron: SiElectron,
+  Expo: ExpoIcon,
+  Electron: DevElectron,
   "Node.js": SiNodedotjs,
-  "Express.js": SiExpress,
+  "Express.js": ExpressIcon,
   REST: TbApi,
-  "Socket.io": SiSocketdotio,
+  "Socket.io": SocketIoIcon,
   Prisma: SiPrisma,
   GraphQL: SiGraphql,
-  MongoDB: SiMongodb,
-  PostgreSQL: SiPostgresql,
+  MongoDB: TbBrandMongodb,
+  PostgreSQL: DevPostgresql,
   Redis: SiRedis,
   ESLint: SiEslint,
   Prettier: SiPrettier,
@@ -118,7 +142,7 @@ const technologyIcons = {
   npm: SiNpm,
   Vite: SiVite,
   pnpm: SiPnpm,
-  "GitHub Actions": SiGithubactions,
+  "GitHub Actions": DevGithubActions,
   Vitest: SiVitest,
   Playwright: DevPlaywright,
   Postman: SiPostman,
@@ -126,20 +150,20 @@ const technologyIcons = {
   "Adobe XD": TbBrandAdobeXd,
   Canva: CanvaIcon,
   Sketch: SiSketch,
-  Docker: SiDocker,
-  Kubernetes: SiKubernetes,
+  Docker: TbBrandDocker,
+  Kubernetes: DevKubernetes,
   Terraform: SiTerraform,
-  Jenkins: SiJenkins,
+  Jenkins: DevJenkins,
   Vercel: SiVercel,
   AWS: TbBrandAws,
   Azure: TbBrandAzure,
   "Google Cloud": SiGooglecloud,
-  DigitalOcean: SiDigitalocean,
+  DigitalOcean: BxlDigitalocean,
   Linode: DevLinode,
   Jest: SiJest,
   Mocha: SiMocha,
   Chai: SiChai,
-  Cypress: SiCypress,
+  Cypress: TbBrandCypress,
 } satisfies Record<TechnologyName, IconComponent>;
 
 type TechnologyIconProps = Readonly<{
