@@ -1,8 +1,10 @@
 "use client";
 
+import GrCloudComputer from "@mal-icons/react/gr/GrCloudComputer";
+import GrPaint from "@mal-icons/react/gr/GrPaint";
+import GrTest from "@mal-icons/react/gr/GrTest";
 import SiAntdesign from "@mal-icons/react/si/SiAntdesign";
 import SiBootstrap from "@mal-icons/react/si/SiBootstrap";
-import SiCanvas from "@mal-icons/react/si/SiCanvas";
 import SiChai from "@mal-icons/react/si/SiChai";
 import SiChakraui from "@mal-icons/react/si/SiChakraui";
 import SiCplusplus from "@mal-icons/react/si/SiCplusplus";
@@ -33,7 +35,6 @@ import SiMui from "@mal-icons/react/si/SiMui";
 import SiNextdotjs from "@mal-icons/react/si/SiNextdotjs";
 import SiNodedotjs from "@mal-icons/react/si/SiNodedotjs";
 import SiNpm from "@mal-icons/react/si/SiNpm";
-import SiOpenapiinitiative from "@mal-icons/react/si/SiOpenapiinitiative";
 import SiPnpm from "@mal-icons/react/si/SiPnpm";
 import SiPostgresql from "@mal-icons/react/si/SiPostgresql";
 import SiPostman from "@mal-icons/react/si/SiPostman";
@@ -49,12 +50,16 @@ import SiSketch from "@mal-icons/react/si/SiSketch";
 import SiSocketdotio from "@mal-icons/react/si/SiSocketdotio";
 import SiTailwindcss from "@mal-icons/react/si/SiTailwindcss";
 import SiTerraform from "@mal-icons/react/si/SiTerraform";
-import SiTestinglibrary from "@mal-icons/react/si/SiTestinglibrary";
 import SiTurborepo from "@mal-icons/react/si/SiTurborepo";
 import SiTypescript from "@mal-icons/react/si/SiTypescript";
 import SiVercel from "@mal-icons/react/si/SiVercel";
 import SiVite from "@mal-icons/react/si/SiVite";
 import SiVitest from "@mal-icons/react/si/SiVitest";
+import TbApi from "@mal-icons/react/tb/TbApi";
+import TbBrandAdobeXd from "@mal-icons/react/tb/TbBrandAdobeXd";
+import TbBrandAws from "@mal-icons/react/tb/TbBrandAws";
+import TbBrandAzure from "@mal-icons/react/tb/TbBrandAzure";
+import TbBrandReactNative from "@mal-icons/react/tb/TbBrandReactNative";
 import type { ComponentType } from "react";
 
 import type { TechnologyName } from "@/lib/portfolio-content";
@@ -85,12 +90,12 @@ const technologyIcons = {
   "Headless UI": SiHeadlessui,
   Bootstrap: SiBootstrap,
   "Framer Motion": SiFramer,
-  "React Native": SiReact,
+  "React Native": TbBrandReactNative,
   Expo: SiExpo,
   Electron: SiElectron,
   "Node.js": SiNodedotjs,
   "Express.js": SiExpress,
-  REST: SiOpenapiinitiative,
+  REST: TbApi,
   "Socket.io": SiSocketdotio,
   Prisma: SiPrisma,
   GraphQL: SiGraphql,
@@ -105,22 +110,22 @@ const technologyIcons = {
   pnpm: SiPnpm,
   "GitHub Actions": SiGithubactions,
   Vitest: SiVitest,
-  Playwright: SiTestinglibrary,
+  Playwright: GrTest,
   Postman: SiPostman,
   Figma: SiFigma,
-  "Adobe XD": SiFigma,
-  Canva: SiCanvas,
+  "Adobe XD": TbBrandAdobeXd,
+  Canva: GrPaint,
   Sketch: SiSketch,
   Docker: SiDocker,
   Kubernetes: SiKubernetes,
   Terraform: SiTerraform,
   Jenkins: SiJenkins,
   Vercel: SiVercel,
-  AWS: SiGooglecloud,
-  Azure: SiGooglecloud,
+  AWS: TbBrandAws,
+  Azure: TbBrandAzure,
   "Google Cloud": SiGooglecloud,
   DigitalOcean: SiDigitalocean,
-  Linode: SiGooglecloud,
+  Linode: GrCloudComputer,
   Jest: SiJest,
   Mocha: SiMocha,
   Chai: SiChai,
