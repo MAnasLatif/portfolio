@@ -12,7 +12,7 @@ import {
 import { HeroHeader } from "./_components/hero-header";
 import { SectionHeading } from "./_components/section-heading";
 import { SkillsExplorer } from "./_components/skills-explorer";
-import { TechnologyIcon } from "./_components/technology-icon";
+import { TechnologyMarquee } from "./_components/technology-marquee";
 
 const skillsByTechnologyCount = [...skills].sort(
   (firstSkill, secondSkill) =>
@@ -21,17 +21,6 @@ const skillsByTechnologyCount = [...skills].sort(
 
 const technologyCount = new Set(skills.flatMap((skill) => skill.technologies))
   .size;
-
-const featuredTechnologies = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Tailwind CSS",
-  "Node.js",
-  "Python",
-  "Docker",
-  "AWS",
-] as const;
 
 export default function HomePage() {
   return (
@@ -75,17 +64,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <ul className="flex overflow-hidden border-b border-white/12 py-3">
-          {featuredTechnologies.map((technology) => (
-            <li
-              key={technology}
-              className="flex shrink-0 items-center gap-2 border-r border-white/10 px-5 font-mono text-[9px] uppercase tracking-[0.16em] text-white/38 first:pl-0"
-            >
-              <TechnologyIcon name={technology} />
-              {technology}
-            </li>
-          ))}
-        </ul>
+        <TechnologyMarquee />
 
         <SkillsExplorer />
       </section>

@@ -100,6 +100,17 @@ export const skills = [
 
 export type TechnologyName = (typeof skills)[number]["technologies"][number];
 
+export const favoriteTechnologies = [
+  "TypeScript",
+  "React",
+  "Next.js",
+  "Tailwind CSS",
+  "Node.js",
+  "Python",
+  "Docker",
+  "AWS",
+] as const satisfies readonly TechnologyName[];
+
 export const projects = [
   {
     name: "File Manager",
