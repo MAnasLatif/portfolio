@@ -11,6 +11,7 @@ import {
 
 import { HeroHeader } from "./_components/hero-header";
 import { SectionHeading } from "./_components/section-heading";
+import { TechnologyIcon } from "./_components/technology-icon";
 
 export default function HomePage() {
   return (
@@ -40,7 +41,7 @@ export default function HomePage() {
                     className="flex items-center justify-between border-b border-white/7 pb-3 text-lg font-semibold text-white/74 last:border-0"
                   >
                     {technology}
-                    <span className="size-1 bg-white/25" aria-hidden="true" />
+                    <TechnologyIcon name={technology} />
                   </li>
                 ))}
               </ul>

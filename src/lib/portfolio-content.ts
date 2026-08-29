@@ -98,6 +98,8 @@ export const skills = [
   },
 ] as const;
 
+export type TechnologyName = (typeof skills)[number]["technologies"][number];
+
 export const projects = [
   {
     name: "File Manager",
