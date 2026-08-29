@@ -19,7 +19,7 @@ const story = [
   },
   {
     title: "Open work as a practice",
-    text: "I use open-source projects to turn recurring problems into reusable tools. Publishing the work creates a useful standard: the setup, boundaries, and documentation need to make sense to someone who was not in the room when they were designed.",
+    text: "I use projects to turn recurring problems into reusable tools. Sharing the work creates a useful standard: the setup, boundaries, and documentation need to make sense to someone who was not in the room when they were designed.",
   },
 ] as const;
 

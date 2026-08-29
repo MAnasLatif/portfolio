@@ -1,5 +1,4 @@
 import TbArrowRight from "@mal-icons/react/tb/TbArrowRight";
-import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
 import Link from "next/link";
 
 import {
@@ -71,68 +70,73 @@ export default function HomePage() {
 
       <section className="relative z-10 border-y border-white/10 bg-[#080a0f]/88 text-white backdrop-blur-sm">
         <div className="mx-auto max-w-360 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="grid gap-8 border-t border-white/12 pt-8 lg:grid-cols-[0.55fr_1.45fr]">
-            <div className="flex items-start gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-white/35">
-              <span>02</span>
-              <span>Selected work</span>
-            </div>
+          <div className="grid gap-10 border-b border-white/12 pb-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <div>
-              <h2 className="max-w-3xl text-4xl font-black uppercase leading-[0.95] sm:text-6xl">
-                Open-source projects
-              </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-white/48">
-                Current experiments and reusable systems across product
-                software, agent workflows, interfaces, and developer
-                infrastructure.
+              <p className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-white/35">
+                <span className="h-px w-5 bg-white/30" />
+                Selected work
               </p>
+              <h2 className="mt-4 text-4xl font-black leading-none text-white sm:text-6xl">
+                Featured Projects
+              </h2>
+              <p className="mt-5 max-w-2xl border-l border-white/25 pl-4 text-base leading-7 text-white/48">
+                A temporary set of demo projects. Real case studies and project
+                details will replace these entries soon.
+              </p>
+            </div>
+
+            <div className="relative min-w-56 text-left lg:text-right">
+              <span className="absolute -right-2 -top-14 -z-10 font-mono text-[9rem] font-bold leading-none text-white/3">
+                02
+              </span>
+              <div className="flex items-end gap-3 lg:justify-end">
+                <strong className="text-6xl font-black leading-none text-white sm:text-7xl">
+                  {projects.length}
+                </strong>
+                <span className="pb-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/30">
+                  Projects
+                </span>
+              </div>
+              <Link
+                href="/projects"
+                className="mt-4 inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-white/35 transition-colors hover:text-white"
+              >
+                View all
+                <TbArrowRight size={13} />
+              </Link>
             </div>
           </div>
 
-          <div className="mt-14 grid border-t border-white/12 md:grid-cols-2">
-            {projects.slice(0, 4).map((project, index) => (
-              <a
+          <div>
+            {projects.map((project, index) => (
+              <article
                 key={project.name}
-                href={project.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group min-h-80 border-b border-white/12 py-8 md:odd:border-r md:odd:pr-8 md:even:pl-8"
+                className="grid gap-5 border-b border-white/12 py-8 sm:grid-cols-[44px_minmax(0,1fr)_auto] sm:items-center sm:gap-4"
               >
-                <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-white/30">
-                  <span>
-                    0{index + 1} / {project.eyebrow}
-                  </span>
-                  <TbExternalLink
-                    className="transition-transform group-hover:translate-x-1"
-                    size={14}
-                  />
+                <span className="font-mono text-[10px] text-white/20">
+                  0{index + 1}
+                </span>
+                <div>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <h3 className="text-xl font-bold text-white/88 sm:text-2xl">
+                      {project.name}
+                    </h3>
+                    <span className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/25">
+                      {project.eyebrow}
+                    </span>
+                  </div>
+                  <p className="mt-2 max-w-4xl text-sm leading-6 text-white/40">
+                    {project.description}
+                  </p>
+                  <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.14em] text-white/25">
+                    {project.technologies.join(" · ")}
+                  </p>
                 </div>
-                <h3 className="mt-12 text-3xl font-black uppercase leading-none sm:text-4xl">
-                  {project.name}
-                </h3>
-                <p className="mt-5 max-w-xl leading-7 text-white/45">
-                  {project.description}
-                </p>
-                <ul className="mt-8 flex flex-wrap gap-2">
-                  {project.technologies.map((technology) => (
-                    <li
-                      key={technology}
-                      className="border border-white/14 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-white/55"
-                    >
-                      {technology}
-                    </li>
-                  ))}
-                </ul>
-              </a>
+                <span className="justify-self-start font-mono text-[9px] uppercase tracking-[0.16em] text-white/25 sm:justify-self-end">
+                  {project.status}
+                </span>
+              </article>
             ))}
-          </div>
-          <div className="mt-10 flex justify-end">
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
-            >
-              View all projects
-              <TbArrowRight size={16} />
-            </Link>
           </div>
         </div>
       </section>

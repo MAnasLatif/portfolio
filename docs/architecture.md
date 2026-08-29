@@ -54,4 +54,5 @@ dynamic article route enumerates every supported slug through
 `generateStaticParams`; unknown slugs resolve to the shared not-found boundary.
 
 Public claims are limited to information verified from the linked GitHub and
-LinkedIn profiles. Projects link directly to source.
+LinkedIn profiles. Project records are typed local content and may use clearly
+labelled demo entries until verified case studies and destinations are supplied.

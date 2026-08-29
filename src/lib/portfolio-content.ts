@@ -113,58 +113,28 @@ export const favoriteTechnologies = [
 
 export const projects = [
   {
-    name: "File Manager",
-    eyebrow: "Developer tooling",
+    name: "Atlas Commerce",
+    eyebrow: "Commerce platform",
     description:
-      "A TypeScript monorepo for a reusable file-management package, command-line interface, and working examples.",
-    technologies: ["TypeScript", "CLI", "Monorepo"],
-    href: "https://github.com/MAnasLatif/file-manager",
-    stars: 3,
+      "A demo storefront and operations workspace designed around fast product discovery, clear order handling, and maintainable commerce workflows.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+    status: "Demo project",
   },
   {
-    name: "WhatsApp AI Assistant",
-    eyebrow: "Applied AI",
+    name: "Relay AI Workspace",
+    eyebrow: "AI productivity",
     description:
-      "An open-source assistant project exploring practical AI workflows through a familiar messaging surface.",
-    technologies: ["TypeScript", "AI", "Automation"],
-    href: "https://github.com/MAnasLatif/whatsapp-ai-assistant",
-    stars: 1,
+      "A demo workspace for organizing assisted research, reusable prompts, and reviewable AI workflows without losing human context.",
+    technologies: ["React", "Node.js", "AI"],
+    status: "Demo project",
   },
   {
-    name: "MAL UI",
-    eyebrow: "Design systems",
+    name: "Pulse Operations",
+    eyebrow: "Operations dashboard",
     description:
-      "An open-source React component system with hooks, forms, charts, rich text, file uploads, and a shared MAL brand theme.",
-    technologies: ["React", "Mantine", "TypeScript"],
-    href: "https://github.com/MAnasLatif/mal-ui",
-    stars: 0,
-  },
-  {
-    name: "Password Manager",
-    eyebrow: "Web application",
-    description:
-      "A password-management application focused on organizing credentials, generating passwords, and keeping sensitive information usable.",
-    technologies: ["TypeScript", "Security", "Web"],
-    href: "https://github.com/MAnasLatif/password-manager",
-    stars: 0,
-  },
-  {
-    name: "CTO Skill",
-    eyebrow: "AI engineering",
-    description:
-      "An evidence-driven agent skill that routes technical leadership work across architecture, security, product, delivery, and operations.",
-    technologies: ["Python", "Agents", "Architecture"],
-    href: "https://github.com/MAnasLatif/CTO",
-    stars: 0,
-  },
-  {
-    name: "Node Devbox",
-    eyebrow: "Infrastructure",
-    description:
-      "A reusable Node.js 24 development environment distributed with Docker Compose and GitHub Container Registry.",
-    technologies: ["Node.js", "Docker", "GHCR"],
-    href: "https://github.com/MAnasLatif/node-devbox",
-    stars: 0,
+      "A demo command center that turns service health, team activity, and operational priorities into one focused daily view.",
+    technologies: ["Next.js", "PostgreSQL", "Docker"],
+    status: "Demo project",
   },
 ] as const;
 
