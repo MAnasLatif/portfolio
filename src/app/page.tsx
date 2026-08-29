@@ -30,11 +30,11 @@ export default function HomePage() {
           title="Skills & technologies"
           description="A product-minded toolkit for moving from an ambiguous problem to a maintainable digital product."
         />
-        <div className="mt-14 grid gap-px border-y border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid border-l border-t border-white/10 sm:grid-cols-2 lg:grid-cols-3">
           {skillsByTechnologyCount.map((skill, skillIndex) => (
             <article
               key={skill.name}
-              className="bg-[#03050a] px-0 py-8 sm:px-8"
+              className="border-r border-b border-white/10 bg-transparent px-0 py-8 sm:px-8"
             >
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/30">
                 {String(skillIndex + 1).padStart(2, "0")} / {skill.name}
