@@ -11,11 +11,7 @@ import { useEffect, useState } from "react";
 const navigation = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Stats", href: "/stats" },
-  { label: "Utilities", href: "/utilities" },
   { label: "Blogs", href: "/blogs" },
-  { label: "Books", href: "/books" },
-  { label: "Certificates", href: "/certificates" },
   { label: "Projects", href: "/projects" },
 ] as const;
 

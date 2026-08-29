@@ -4,12 +4,12 @@
 
 This repository contains the public portfolio of M. Anas Latif. Its primary
 audiences are recruiters, prospective clients, and engineering collaborators.
-The product presents a profile, technical range, public GitHub statistics,
-selected projects, original writing, working references, and contact paths.
+The product presents a profile, technical range, selected projects, original
+writing, and contact paths.
 
 The accepted UI is a dark, editorial multipage experience with a decorative
-animated space background. Its information architecture follows eight top-level
-routes: Home, About, Stats, Utilities, Blogs, Books, Certificates, and Projects.
+animated space background. Its information architecture follows four top-level
+routes: Home, About, Blogs, and Projects.
 
 ## Decisions
 
@@ -54,6 +54,4 @@ dynamic article route enumerates every supported slug through
 `generateStaticParams`; unknown slugs resolve to the shared not-found boundary.
 
 Public claims are limited to information verified from the linked GitHub and
-LinkedIn profiles. Projects link directly to source. Books and Certificates use
-transparent editorial states when no verified personal reading list or public
-credential is available instead of manufacturing content.
+LinkedIn profiles. Projects link directly to source.

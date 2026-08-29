@@ -8,8 +8,8 @@ original editorial content, and verified links to public work.
 ## Portfolio sections
 
 - Home overview with capabilities, selected projects, writing, and principles
-- About, public GitHub statistics, and working utilities
-- Projects, blogs with article detail pages, books and references, and credentials
+- About and professional background
+- Projects and blogs with article detail pages
 - Shared contact paths through GitHub and LinkedIn
 
 ## Architecture decisions
