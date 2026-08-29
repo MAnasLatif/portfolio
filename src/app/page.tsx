@@ -13,6 +13,11 @@ import { HeroHeader } from "./_components/hero-header";
 import { SectionHeading } from "./_components/section-heading";
 import { TechnologyIcon } from "./_components/technology-icon";
 
+const skillsByTechnologyCount = [...skills].sort(
+  (firstSkill, secondSkill) =>
+    secondSkill.technologies.length - firstSkill.technologies.length,
+);
+
 export default function HomePage() {
   return (
     <main>
@@ -26,7 +31,7 @@ export default function HomePage() {
           description="A product-minded toolkit for moving from an ambiguous problem to a maintainable digital product."
         />
         <div className="mt-14 grid gap-px border-y border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
-          {skills.map((skill, skillIndex) => (
+          {skillsByTechnologyCount.map((skill, skillIndex) => (
             <article
               key={skill.name}
               className="bg-[#03050a] px-0 py-8 sm:px-8"
