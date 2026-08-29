@@ -1,13 +1,8 @@
 "use client";
 
-import AdApi from "@mal-icons/react/ad/AdApi";
-import DevAws from "@mal-icons/react/dev/DevAws";
-import DevLinode from "@mal-icons/react/dev/DevLinode";
-import DevMicrosoftAzure from "@mal-icons/react/dev/DevMicrosoftAzure";
-import DevPlaywright from "@mal-icons/react/dev/DevPlaywright";
-import MsoDesignServices from "@mal-icons/react/mso/MsoDesignServices";
 import SiAntdesign from "@mal-icons/react/si/SiAntdesign";
 import SiBootstrap from "@mal-icons/react/si/SiBootstrap";
+import SiCanvas from "@mal-icons/react/si/SiCanvas";
 import SiChai from "@mal-icons/react/si/SiChai";
 import SiChakraui from "@mal-icons/react/si/SiChakraui";
 import SiCplusplus from "@mal-icons/react/si/SiCplusplus";
@@ -38,6 +33,7 @@ import SiMui from "@mal-icons/react/si/SiMui";
 import SiNextdotjs from "@mal-icons/react/si/SiNextdotjs";
 import SiNodedotjs from "@mal-icons/react/si/SiNodedotjs";
 import SiNpm from "@mal-icons/react/si/SiNpm";
+import SiOpenapiinitiative from "@mal-icons/react/si/SiOpenapiinitiative";
 import SiPnpm from "@mal-icons/react/si/SiPnpm";
 import SiPostgresql from "@mal-icons/react/si/SiPostgresql";
 import SiPostman from "@mal-icons/react/si/SiPostman";
@@ -53,12 +49,12 @@ import SiSketch from "@mal-icons/react/si/SiSketch";
 import SiSocketdotio from "@mal-icons/react/si/SiSocketdotio";
 import SiTailwindcss from "@mal-icons/react/si/SiTailwindcss";
 import SiTerraform from "@mal-icons/react/si/SiTerraform";
+import SiTestinglibrary from "@mal-icons/react/si/SiTestinglibrary";
 import SiTurborepo from "@mal-icons/react/si/SiTurborepo";
 import SiTypescript from "@mal-icons/react/si/SiTypescript";
 import SiVercel from "@mal-icons/react/si/SiVercel";
 import SiVite from "@mal-icons/react/si/SiVite";
 import SiVitest from "@mal-icons/react/si/SiVitest";
-import TbXd from "@mal-icons/react/tb/TbXd";
 import type { ComponentType } from "react";
 
 import type { TechnologyName } from "@/lib/portfolio-content";
@@ -94,7 +90,7 @@ const technologyIcons = {
   Electron: SiElectron,
   "Node.js": SiNodedotjs,
   "Express.js": SiExpress,
-  REST: AdApi,
+  REST: SiOpenapiinitiative,
   "Socket.io": SiSocketdotio,
   Prisma: SiPrisma,
   GraphQL: SiGraphql,
@@ -109,22 +105,22 @@ const technologyIcons = {
   pnpm: SiPnpm,
   "GitHub Actions": SiGithubactions,
   Vitest: SiVitest,
-  Playwright: DevPlaywright,
+  Playwright: SiTestinglibrary,
   Postman: SiPostman,
   Figma: SiFigma,
-  "Adobe XD": TbXd,
-  Canva: MsoDesignServices,
+  "Adobe XD": SiFigma,
+  Canva: SiCanvas,
   Sketch: SiSketch,
   Docker: SiDocker,
   Kubernetes: SiKubernetes,
   Terraform: SiTerraform,
   Jenkins: SiJenkins,
   Vercel: SiVercel,
-  AWS: DevAws,
-  Azure: DevMicrosoftAzure,
+  AWS: SiGooglecloud,
+  Azure: SiGooglecloud,
   "Google Cloud": SiGooglecloud,
   DigitalOcean: SiDigitalocean,
-  Linode: DevLinode,
+  Linode: SiGooglecloud,
   Jest: SiJest,
   Mocha: SiMocha,
   Chai: SiChai,
