@@ -36,7 +36,7 @@ export default function HomePage() {
               key={skill.name}
               className="border-r border-b border-white/10 bg-[#080a0f]/72 px-0 py-8 backdrop-blur-sm sm:px-8"
             >
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/30">
+              <p className="px-5 font-mono text-[10px] uppercase tracking-[0.22em] text-white/30 sm:px-0">
                 {String(skillIndex + 1).padStart(2, "0")} / {skill.name}
               </p>
               <ul className="mt-7 space-y-3">
