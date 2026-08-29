@@ -1,5 +1,8 @@
 "use client";
 
+import LuMenu from "@mal-icons/react/lu/LuMenu";
+import LuSend from "@mal-icons/react/lu/LuSend";
+import LuX from "@mal-icons/react/lu/LuX";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -87,9 +90,10 @@ export function SiteHeader() {
             href="https://www.linkedin.com/in/manaslatif/"
             target="_blank"
             rel="noreferrer"
-            className="hidden border border-white/18 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white/75 transition-colors hover:border-white/50 hover:text-white sm:block"
+            className="hidden items-center gap-2 border border-white/18 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white/75 transition-colors hover:border-white/50 hover:text-white sm:inline-flex"
           >
             Let's talk
+            <LuSend size={14} />
           </a>
           <button
             type="button"
@@ -99,17 +103,7 @@ export function SiteHeader() {
             onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
             className="grid size-9 place-items-center border border-white/18 text-white lg:hidden"
           >
-            <span className="relative block h-3.5 w-4" aria-hidden="true">
-              <span
-                className={`absolute left-0 top-0 h-px w-4 bg-current transition-transform ${isMenuOpen ? "translate-y-1.5 rotate-45" : ""}`}
-              />
-              <span
-                className={`absolute left-0 top-1.5 h-px w-4 bg-current transition-opacity ${isMenuOpen ? "opacity-0" : ""}`}
-              />
-              <span
-                className={`absolute left-0 top-3 h-px w-4 bg-current transition-transform ${isMenuOpen ? "-translate-y-1.5 -rotate-45" : ""}`}
-              />
-            </span>
+            {isMenuOpen ? <LuX size={18} /> : <LuMenu size={18} />}
           </button>
         </div>
       </div>

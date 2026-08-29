@@ -1,5 +1,7 @@
 "use client";
 
+import LuHouse from "@mal-icons/react/lu/LuHouse";
+import LuRefreshCw from "@mal-icons/react/lu/LuRefreshCw";
 import { useEffect } from "react";
 
 type ErrorBoundaryProps = Readonly<{
@@ -29,14 +31,16 @@ export default function ErrorBoundary({ error, reset }: ErrorBoundaryProps) {
           <button
             type="button"
             onClick={reset}
-            className="bg-white px-6 py-3 text-sm font-bold text-[#080a0f]"
+            className="inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-bold text-[#080a0f]"
           >
+            <LuRefreshCw size={16} />
             Try again
           </button>
           <a
             href="/"
-            className="border border-white/20 px-6 py-3 text-sm font-bold text-white"
+            className="inline-flex items-center gap-2 border border-white/20 px-6 py-3 text-sm font-bold text-white"
           >
+            <LuHouse size={16} />
             Return home
           </a>
         </div>

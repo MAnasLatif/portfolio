@@ -1,3 +1,4 @@
+import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
 import type { Metadata } from "next";
 
 import { projects } from "@/lib/portfolio-content";
@@ -43,8 +44,9 @@ export default function ProjectsPage() {
                 <span>
                   0{index + 1} / {project.eyebrow}
                 </span>
-                <span className="transition-transform group-hover:translate-x-1">
-                  View ↗
+                <span className="inline-flex items-center gap-2 transition-transform group-hover:translate-x-1">
+                  View
+                  <LuExternalLink size={14} />
                 </span>
               </div>
               <div className="my-auto py-14">

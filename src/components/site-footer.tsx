@@ -1,3 +1,4 @@
+import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
 import Link from "next/link";
 
 const footerLinks = [
@@ -31,9 +32,10 @@ export function SiteFooter() {
                 href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-white/50 transition-colors hover:text-white"
+                className="inline-flex items-center gap-1.5 text-sm text-white/50 transition-colors hover:text-white"
               >
                 {link.label}
+                <LuExternalLink size={12} />
               </a>
             ) : (
               <Link

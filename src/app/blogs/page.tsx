@@ -1,3 +1,4 @@
+import LuArrowRight from "@mal-icons/react/lu/LuArrowRight";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -43,7 +44,10 @@ export default function BlogsPage() {
               </span>
               <span className="flex justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-white/30 lg:block lg:text-right">
                 <span>{article.category}</span>
-                <span className="ml-3">{article.readTime} ↗</span>
+                <span className="ml-3 inline-flex items-center justify-end gap-2">
+                  {article.readTime}
+                  <LuArrowRight size={13} />
+                </span>
               </span>
             </Link>
           ))}

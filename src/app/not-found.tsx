@@ -1,3 +1,4 @@
+import LuHouse from "@mal-icons/react/lu/LuHouse";
 import Link from "next/link";
 
 export default function NotFound() {
@@ -19,8 +20,9 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="mt-9 inline-flex bg-white px-6 py-3 text-sm font-bold text-[#080a0f]"
+          className="mt-9 inline-flex items-center gap-2 bg-white px-6 py-3 text-sm font-bold text-[#080a0f]"
         >
+          <LuHouse size={16} />
           Return home
         </Link>
       </div>

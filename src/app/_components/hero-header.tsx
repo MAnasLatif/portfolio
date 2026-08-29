@@ -1,3 +1,7 @@
+import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
+import LuSend from "@mal-icons/react/lu/LuSend";
+import SiGithub from "@mal-icons/react/si/SiGithub";
+
 export function HeroHeader() {
   return (
     <section className="relative z-10 mx-auto grid min-h-svh max-w-360 items-center gap-14 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(320px,0.75fr)] lg:px-12 lg:pb-20 lg:pt-32">
@@ -27,16 +31,18 @@ export function HeroHeader() {
             href="https://github.com/MAnasLatif"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-14 items-center justify-center bg-white px-7 text-sm font-bold text-[#080a0f] transition-colors hover:bg-white/80"
+            className="inline-flex h-14 items-center justify-center gap-2 bg-white px-7 text-sm font-bold text-[#080a0f] transition-colors hover:bg-white/80"
           >
+            <SiGithub size={18} />
             Explore GitHub
           </a>
           <a
             href="https://www.linkedin.com/in/manaslatif/"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-14 items-center justify-center border border-white/20 px-7 text-sm font-bold text-white transition-colors hover:border-white/55"
+            className="inline-flex h-14 items-center justify-center gap-2 border border-white/20 px-7 text-sm font-bold text-white transition-colors hover:border-white/55"
           >
+            <LuSend size={18} />
             Get in touch
           </a>
         </div>
@@ -48,17 +54,19 @@ export function HeroHeader() {
             href="https://www.linkedin.com/in/manaslatif/"
             target="_blank"
             rel="noreferrer"
-            className="transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
           >
             LinkedIn
+            <LuExternalLink size={11} />
           </a>
           <a
             href="https://github.com/MAnasLatif"
             target="_blank"
             rel="noreferrer"
-            className="transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 transition-colors hover:text-white"
           >
             GitHub
+            <SiGithub size={11} />
           </a>
         </div>
       </div>

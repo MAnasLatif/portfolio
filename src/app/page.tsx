@@ -1,3 +1,5 @@
+import LuArrowRight from "@mal-icons/react/lu/LuArrowRight";
+import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
 import Link from "next/link";
 
 import {
@@ -79,9 +81,10 @@ export default function HomePage() {
                   <span>
                     0{index + 1} / {project.eyebrow}
                   </span>
-                  <span className="transition-transform group-hover:translate-x-1">
-                    ↗
-                  </span>
+                  <LuExternalLink
+                    className="transition-transform group-hover:translate-x-1"
+                    size={14}
+                  />
                 </div>
                 <h3 className="mt-12 text-3xl font-black uppercase leading-none sm:text-4xl">
                   {project.name}
@@ -105,9 +108,10 @@ export default function HomePage() {
           <div className="mt-10 flex justify-end">
             <Link
               href="/projects"
-              className="border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
+              className="inline-flex items-center gap-2 border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
             >
-              View all projects →
+              View all projects
+              <LuArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -138,8 +142,9 @@ export default function HomePage() {
                   {article.summary}
                 </span>
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/28">
-                {article.readTime} ↗
+              <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white/28">
+                {article.readTime}
+                <LuArrowRight size={13} />
               </span>
             </Link>
           ))}
@@ -147,9 +152,10 @@ export default function HomePage() {
         <div className="mt-10 flex justify-end">
           <Link
             href="/blogs"
-            className="border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
+            className="inline-flex items-center gap-2 border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
           >
-            Read all notes →
+            Read all notes
+            <LuArrowRight size={16} />
           </Link>
         </div>
       </section>

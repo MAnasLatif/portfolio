@@ -1,3 +1,4 @@
+import LuArrowLeft from "@mal-icons/react/lu/LuArrowLeft";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -46,9 +47,10 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <header className="mx-auto max-w-5xl px-5 pb-16 pt-32 sm:px-8 sm:pt-40 lg:pb-24">
           <Link
             href="/blogs"
-            className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/35 transition-colors hover:text-white"
+            className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-white/35 transition-colors hover:text-white"
           >
-            ← All writing
+            <LuArrowLeft size={14} />
+            All writing
           </Link>
           <p className="mt-12 font-mono text-[10px] uppercase tracking-[0.22em] text-white/35">
             {article.category} / {article.readTime} read

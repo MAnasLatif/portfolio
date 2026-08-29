@@ -1,3 +1,4 @@
+import LuExternalLink from "@mal-icons/react/lu/LuExternalLink";
 import type { Metadata } from "next";
 
 import { PageIntro } from "../_components/page-intro";
@@ -62,7 +63,10 @@ export default function CertificatesPage() {
                 >
                   <span className="flex justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-white/25">
                     <span>0{index + 1}</span>
-                    <span>{item.label}</span>
+                    <span className="inline-flex items-center gap-2">
+                      {item.label}
+                      <LuExternalLink size={12} />
+                    </span>
                   </span>
                   <h2 className="mt-auto text-2xl font-bold text-white/80 transition-colors group-hover:text-white">
                     {item.title}
