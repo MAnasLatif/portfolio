@@ -47,10 +47,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-10 bg-white text-[#080a0f]">
+      <section className="relative z-10 border-y border-white/10 bg-[#080a0f]/88 text-white backdrop-blur-sm">
         <div className="mx-auto max-w-360 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="grid gap-8 border-t border-black/15 pt-8 lg:grid-cols-[0.55fr_1.45fr]">
-            <div className="flex items-start gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-black/45">
+          <div className="grid gap-8 border-t border-white/12 pt-8 lg:grid-cols-[0.55fr_1.45fr]">
+            <div className="flex items-start gap-4 font-mono text-[10px] uppercase tracking-[0.24em] text-white/35">
               <span>02</span>
               <span>Selected work</span>
             </div>
@@ -58,7 +58,7 @@ export default function HomePage() {
               <h2 className="max-w-3xl text-4xl font-black uppercase leading-[0.95] sm:text-6xl">
                 Open-source projects
               </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-black/58">
+              <p className="mt-5 max-w-2xl text-base leading-7 text-white/48">
                 Current experiments and reusable systems across product
                 software, agent workflows, interfaces, and developer
                 infrastructure.
@@ -66,16 +66,16 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mt-14 grid border-t border-black/15 md:grid-cols-2">
+          <div className="mt-14 grid border-t border-white/12 md:grid-cols-2">
             {projects.slice(0, 4).map((project, index) => (
               <a
                 key={project.name}
                 href={project.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group min-h-80 border-b border-black/15 py-8 md:odd:border-r md:odd:pr-8 md:even:pl-8"
+                className="group min-h-80 border-b border-white/12 py-8 md:odd:border-r md:odd:pr-8 md:even:pl-8"
               >
-                <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-black/42">
+                <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-white/30">
                   <span>
                     0{index + 1} / {project.eyebrow}
                   </span>
@@ -86,14 +86,14 @@ export default function HomePage() {
                 <h3 className="mt-12 text-3xl font-black uppercase leading-none sm:text-4xl">
                   {project.name}
                 </h3>
-                <p className="mt-5 max-w-xl leading-7 text-black/58">
+                <p className="mt-5 max-w-xl leading-7 text-white/45">
                   {project.description}
                 </p>
                 <ul className="mt-8 flex flex-wrap gap-2">
                   {project.technologies.map((technology) => (
                     <li
                       key={technology}
-                      className="border border-black/18 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em]"
+                      className="border border-white/14 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-white/55"
                     >
                       {technology}
                     </li>
@@ -105,7 +105,7 @@ export default function HomePage() {
           <div className="mt-10 flex justify-end">
             <Link
               href="/projects"
-              className="border-b border-black pb-1 text-sm font-bold uppercase tracking-[0.12em]"
+              className="border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
             >
               View all projects →
             </Link>
