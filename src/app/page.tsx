@@ -34,7 +34,7 @@ export default function HomePage() {
           {skillsByTechnologyCount.map((skill, skillIndex) => (
             <article
               key={skill.name}
-              className="border-r border-b border-white/10 bg-transparent px-0 py-8 sm:px-8"
+              className="border-r border-b border-white/10 bg-[#080a0f]/72 px-0 py-8 backdrop-blur-sm sm:px-8"
             >
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/30">
                 {String(skillIndex + 1).padStart(2, "0")} / {skill.name}
