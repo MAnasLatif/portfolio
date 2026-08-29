@@ -43,7 +43,7 @@ export default function HomePage() {
                 {skill.technologies.map((technology) => (
                   <li
                     key={technology}
-                    className="flex items-center justify-between border-b border-white/7 pb-3 text-lg font-semibold text-white/74 last:border-0"
+                    className="flex items-center justify-between border-b border-white/7 px-5 pb-3 text-lg font-semibold text-white/74 last:border-0 sm:px-0"
                   >
                     {technology}
                     <TechnologyIcon name={technology} />
