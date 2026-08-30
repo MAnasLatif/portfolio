@@ -75,9 +75,7 @@ export function HeroHeader() {
             Explore GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/manaslatif/"
-            target="_blank"
-            rel="noreferrer"
+            href="#contact"
             className="inline-flex h-14 items-center justify-center gap-2 border border-white/20 px-7 text-sm font-bold text-white transition-colors hover:border-white/55"
           >
             <TbSend size={18} />

@@ -83,9 +83,7 @@ export function SiteHeader() {
 
         <div className="flex shrink-0 items-center gap-2">
           <a
-            href="https://www.linkedin.com/in/manaslatif/"
-            target="_blank"
-            rel="noreferrer"
+            href="/#contact"
             className="hidden items-center gap-2 border border-white/18 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white/75 transition-colors hover:border-white/50 hover:text-white sm:inline-flex"
           >
             Let's talk

@@ -1,15 +1,10 @@
 import TbArrowRight from "@mal-icons/react/tb/TbArrowRight";
 import Link from "next/link";
 
-import {
-  articles,
-  principles,
-  projects,
-  skills,
-} from "@/lib/portfolio-content";
+import { articles, projects, skills } from "@/lib/portfolio-content";
 
+import { ContactForm } from "./_components/contact-form";
 import { HeroHeader } from "./_components/hero-header";
-import { SectionHeading } from "./_components/section-heading";
 import { SkillsExplorer } from "./_components/skills-explorer";
 import { TechnologyMarquee } from "./_components/technology-marquee";
 
@@ -210,29 +205,82 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-10 border-y border-white/10 bg-[#080a0f]/85">
+      <section
+        id="contact"
+        className="relative z-10 border-y border-white/10 bg-[#080a0f]/85"
+      >
         <div className="mx-auto max-w-360 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <SectionHeading
-            index="04"
-            eyebrow="Working principles"
-            title="Ideas worth keeping close"
-            description="A small set of operating beliefs collected from building, reviewing, and maintaining software."
-          />
-          <div className="mt-14 grid gap-px bg-white/10 lg:grid-cols-3">
-            {principles.map((principle) => (
-              <article
-                key={principle.number}
-                className="min-h-72 bg-[#080a0f] p-8"
+          <div className="grid gap-10 border-b border-white/12 pb-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+            <div>
+              <p className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-white/35">
+                <span className="h-px w-5 bg-white/30" />
+                Let&apos;s work together
+              </p>
+              <h2 className="mt-4 text-4xl font-black leading-none text-white sm:text-6xl">
+                Get in Touch
+              </h2>
+              <p className="mt-5 max-w-2xl border-l border-white/25 pl-4 text-base leading-7 text-white/48">
+                Have a project in mind or want to talk through an idea? Send a
+                message and start the conversation.
+              </p>
+            </div>
+
+            <div className="relative min-w-72 text-left lg:text-right">
+              <span className="absolute -right-2 -top-14 -z-10 font-mono text-[9rem] font-bold leading-none text-white/3">
+                04
+              </span>
+              <p className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/25">
+                Reach me directly
+              </p>
+              <a
+                href="mailto:m.anaslatif.dev@gmail.com"
+                className="mt-2 block text-sm font-bold text-white/80 transition-colors hover:text-white"
               >
-                <p className="font-mono text-[10px] text-white/25">
-                  {principle.number}
-                </p>
-                <h3 className="mt-16 text-2xl font-bold leading-tight text-white/85">
-                  {principle.title}
-                </h3>
-                <p className="mt-4 leading-7 text-white/42">{principle.text}</p>
-              </article>
-            ))}
+                m.anaslatif.dev@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-5 py-10 font-mono text-[9px] uppercase tracking-[0.24em] text-white/22">
+            <span className="h-px flex-1 bg-white/12" />
+            Send a message
+            <span className="h-px flex-1 bg-white/12" />
+          </div>
+
+          <div className="grid gap-14 lg:grid-cols-[1.35fr_0.65fr] lg:gap-20">
+            <ContactForm />
+
+            <aside aria-label="Contact details">
+              <dl className="border-t border-white/15">
+                <div className="flex items-center justify-between gap-6 border-b border-white/15 py-4">
+                  <dt className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/28">
+                    Email
+                  </dt>
+                  <dd className="text-right text-sm font-semibold text-white/72">
+                    m.anaslatif.dev@gmail.com
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between gap-6 border-b border-white/15 py-4">
+                  <dt className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/28">
+                    Location
+                  </dt>
+                  <dd className="text-right text-sm font-semibold text-white/72">
+                    Pakistan
+                  </dd>
+                </div>
+                <div className="flex items-center justify-between gap-6 border-b border-white/15 py-4">
+                  <dt className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/28">
+                    Preferred
+                  </dt>
+                  <dd className="text-right text-sm font-semibold text-white/72">
+                    Email / LinkedIn
+                  </dd>
+                </div>
+              </dl>
+              <p className="mt-12 max-w-sm text-5xl font-black uppercase leading-[0.88] text-white/5 sm:text-6xl">
+                Let&apos;s build together
+              </p>
+            </aside>
           </div>
         </div>
       </section>

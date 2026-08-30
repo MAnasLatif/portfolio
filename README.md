@@ -23,7 +23,7 @@ original editorial content, and verified links to public work.
 | Application boundary | Server Components; no Server Actions required yet |
 | HTTP APIs and external services | None |
 | Realtime | None |
-| Email | None |
+| Email | Local `mailto:` handoff; no delivery service |
 | Uploads and storage | None |
 | Deployment | Vercel |
 | Security and privacy | No secrets or private personal data in source |
@@ -110,8 +110,10 @@ surface. Add focused Bun tests with the first behavior that needs them.
 
 The portfolio is statically generated. Server Components are the default, and
 there are no Server Actions, Route Handlers, internal APIs, or external service
-adapters. The only Client Components are the Canvas animation, responsive
-navigation, and required error boundaries.
+adapters. The Client Components are the Canvas animation, responsive navigation,
+contact form mailto handoff, and required error boundaries. The contact form
+opens the visitor's configured email application; the site does not transmit or
+store message data.
 
 If future requirements introduce untrusted input, validate it with Zod at the
 boundary. Keep privileged operations server-only and return serializable DTOs

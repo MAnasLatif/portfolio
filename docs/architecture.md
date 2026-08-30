@@ -24,7 +24,7 @@ routes: Home, About, Blogs, and Projects.
 | HTTP APIs | None |
 | External services | None |
 | Realtime | None |
-| Email | None |
+| Email | Local `mailto:` handoff; no delivery service |
 | Uploads and storage | None |
 | Deployment | Vercel |
 | Security and privacy | No secrets or private personal data in source |
@@ -46,7 +46,9 @@ Server Components are the default. Client Components exist only where browser
 APIs or framework recovery require them. `SpaceBackground` draws through Canvas,
 ignores pointer input, respects reduced motion, and pauses when the page is
 hidden. `SiteHeader` owns the responsive menu and route-aware navigation. The
-error boundaries are client-side so they can log failures and invoke recovery.
+contact form builds a local `mailto:` draft and does not transmit or store form
+data. The error boundaries are client-side so they can log failures and invoke
+recovery.
 
 All top-level routes are statically generated. Blog article metadata is shared
 with Home, while article bodies remain under `src/app/blogs/_content/`. The

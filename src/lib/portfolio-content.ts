@@ -164,21 +164,3 @@ export const articles = [
     readTime: "4 min",
   },
 ] as const;
-
-export const principles = [
-  {
-    number: "01",
-    title: "Evidence before confidence",
-    text: "Inspect the system, name the uncertainty, and let a focused check decide what happens next.",
-  },
-  {
-    number: "02",
-    title: "Small surfaces, complete outcomes",
-    text: "Keep each change narrow enough to understand while carrying the user workflow all the way to done.",
-  },
-  {
-    number: "03",
-    title: "Design is operational",
-    text: "A product is shaped as much by its defaults, failures, and maintenance as by its first impression.",
-  },
-] as const;
