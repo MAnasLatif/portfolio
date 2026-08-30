@@ -142,45 +142,71 @@ export default function HomePage() {
       </section>
 
       <section className="relative z-10 mx-auto max-w-360 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-        <SectionHeading
-          index="03"
-          eyebrow="Field notes"
-          title="Writing in progress"
-          description="Original notes on building software that is useful, understandable, and resilient after launch."
-        />
-        <div className="mt-14 border-t border-white/10">
+        <div className="grid gap-10 border-b border-white/12 pb-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div>
+            <p className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-white/35">
+              <span className="h-px w-5 bg-white/30" />
+              Latest writing
+            </p>
+            <h2 className="mt-4 text-4xl font-black leading-none text-white sm:text-6xl">
+              Featured Articles
+            </h2>
+            <p className="mt-5 max-w-2xl border-l border-white/25 pl-4 text-base leading-7 text-white/48">
+              Thoughts on product engineering, dependable AI workflows, and
+              developer experience.
+            </p>
+          </div>
+
+          <div className="relative min-w-56 text-left lg:text-right">
+            <span className="absolute -right-2 -top-14 -z-10 font-mono text-[9rem] font-bold leading-none text-white/3">
+              03
+            </span>
+            <div className="flex items-end gap-3 lg:justify-end">
+              <strong className="text-6xl font-black leading-none text-white sm:text-7xl">
+                {articles.length}
+              </strong>
+              <span className="pb-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/30">
+                Articles
+              </span>
+            </div>
+            <Link
+              href="/blogs"
+              className="mt-4 inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.18em] text-white/35 transition-colors hover:text-white"
+            >
+              View all
+              <TbArrowRight size={13} />
+            </Link>
+          </div>
+        </div>
+
+        <div>
           {articles.map((article, index) => (
             <Link
               key={article.slug}
               href={`/blogs/${article.slug}`}
-              className="group grid gap-5 border-b border-white/10 py-8 sm:grid-cols-[80px_1fr_auto] sm:items-center"
+              className="group grid gap-5 border-b border-white/10 py-8 sm:grid-cols-[44px_minmax(0,1fr)_auto] sm:items-center sm:gap-4"
             >
-              <span className="font-mono text-xs text-white/25">
+              <span className="font-mono text-[10px] text-white/20">
                 0{index + 1}
               </span>
               <span>
-                <span className="block text-xl font-bold text-white/82 transition-colors group-hover:text-white sm:text-2xl">
+                <span className="block text-xl font-bold text-white/88 transition-colors group-hover:text-white sm:text-2xl">
                   {article.title}
                 </span>
-                <span className="mt-2 block max-w-2xl text-sm leading-6 text-white/40">
+                <span className="mt-2 block max-w-4xl text-sm leading-6 text-white/40">
                   {article.summary}
                 </span>
+                <span className="mt-3 block font-mono text-[9px] uppercase tracking-[0.14em] text-white/25 sm:hidden">
+                  {article.category} · {article.readTime}
+                </span>
               </span>
-              <span className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.18em] text-white/28">
-                {article.readTime}
+              <span className="hidden items-center gap-5 font-mono text-[9px] uppercase tracking-[0.16em] text-white/25 sm:inline-flex">
+                <span>{article.category}</span>
+                <span>{article.readTime}</span>
                 <TbArrowRight size={13} />
               </span>
             </Link>
           ))}
-        </div>
-        <div className="mt-10 flex justify-end">
-          <Link
-            href="/blogs"
-            className="inline-flex items-center gap-2 border-b border-white/60 pb-1 text-sm font-bold uppercase tracking-[0.12em] text-white/70"
-          >
-            Read all notes
-            <TbArrowRight size={16} />
-          </Link>
         </div>
       </section>
 
