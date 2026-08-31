@@ -35,7 +35,7 @@ export function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/8 bg-[#03050a]/88 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 bg-[#03050a]/88 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-360 items-center justify-between px-5 sm:px-8 lg:px-12">
         <Link
           href="/"
