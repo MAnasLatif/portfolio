@@ -210,7 +210,7 @@ export default function HomePage() {
         className="relative z-10 border-y border-white/10 bg-[#080a0f]/85"
       >
         <div className="mx-auto max-w-360 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
-          <div className="grid gap-10 border-b border-white/12 pb-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <div>
               <p className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-white/35">
                 <span className="h-px w-5 bg-white/30" />
@@ -241,7 +241,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-5 py-10 font-mono text-[9px] uppercase tracking-[0.24em] text-white/22">
+          <div className="flex items-center gap-5 pb-10 font-mono text-[9px] uppercase tracking-[0.24em] text-white/22">
             <span className="h-px flex-1 bg-white/12" />
             Send a message
             <span className="h-px flex-1 bg-white/12" />
