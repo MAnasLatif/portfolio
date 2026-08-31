@@ -11,7 +11,7 @@ const footerLinks = [
 
 export function SiteFooter() {
   return (
-    <footer className="relative z-10 border-t border-white/10 bg-[#03050a]/85">
+    <footer className="relative z-10 bg-[#03050a]/85">
       <div className="mx-auto grid max-w-360 gap-12 px-5 py-14 sm:px-8 md:grid-cols-[1fr_auto] lg:px-12">
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-white/35">
