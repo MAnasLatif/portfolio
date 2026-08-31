@@ -111,9 +111,11 @@ surface. Add focused Bun tests with the first behavior that needs them.
 The portfolio is statically generated. Server Components are the default, and
 there are no Server Actions, Route Handlers, internal APIs, or external service
 adapters. The Client Components are the Canvas animation, responsive navigation,
-contact form mailto handoff, and required error boundaries. The contact form
-opens the visitor's configured email application; the site does not transmit or
-store message data.
+progressive hero portrait, contact form mailto handoff, and required error
+boundaries. The portrait loads a lower-quality responsive image first, then
+upgrades only the visible breakpoint image during browser idle time. The contact
+form opens the visitor's configured email application; the site does not
+transmit or store message data.
 
 If future requirements introduce untrusted input, validate it with Zod at the
 boundary. Keep privileged operations server-only and return serializable DTOs

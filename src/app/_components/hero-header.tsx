@@ -1,7 +1,8 @@
 import TbBrandGithub from "@mal-icons/react/tb/TbBrandGithub";
 import TbExternalLink from "@mal-icons/react/tb/TbExternalLink";
 import TbSend from "@mal-icons/react/tb/TbSend";
-import Image from "next/image";
+
+import { ProgressivePortrait } from "./progressive-portrait";
 
 function HeroPortrait({
   className,
@@ -16,14 +17,7 @@ function HeroPortrait({
       <div className="absolute inset-x-0 top-1/2 h-px bg-white/10" />
       <div className="absolute inset-y-0 left-1/2 w-px bg-white/10" />
       <div className="absolute inset-6 overflow-hidden border border-white/14 bg-[#080a0f]/72 backdrop-blur-sm sm:inset-10 lg:inset-16">
-        <Image
-          src="/manaslatif.jpeg"
-          alt="M. Anas Latif working at his laptop"
-          fill
-          priority
-          sizes={sizes}
-          className="object-cover object-[58%_center]"
-        />
+        <ProgressivePortrait sizes={sizes} />
       </div>
       <p className="absolute bottom-1 left-1 font-mono text-[9px] uppercase tracking-[0.22em] text-white/30 sm:bottom-3 sm:left-3 sm:text-[10px] sm:tracking-[0.3em] lg:bottom-4 lg:left-4">
         Engineering / Product / Design
