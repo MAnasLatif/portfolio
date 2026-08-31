@@ -78,9 +78,9 @@ export function SkillsExplorer() {
         {technologies.map((technology) => (
           <li
             key={technology}
-            className="flex min-h-14 items-center gap-3 border border-white/12 bg-[#080a0f]/78 px-4 py-3 text-sm font-semibold text-white/70 backdrop-blur-sm"
+            className="group relative flex min-h-14 items-center gap-3 overflow-hidden border border-white/12 bg-[#080a0f]/78 px-4 py-3 text-sm font-semibold text-white/70 backdrop-blur-sm transition-[border-color,background-color,color] before:absolute before:inset-y-0 before:left-0 before:w-0 before:bg-white before:transition-[width] hover:border-white/35 hover:bg-[#11141a]/92 hover:text-white hover:before:w-1"
           >
-            <span className="grid size-8 shrink-0 place-items-center bg-white/7">
+            <span className="grid size-8 shrink-0 place-items-center bg-white/7 transition-colors group-hover:bg-white group-hover:[&_svg]:text-[#080a0f]">
               <TechnologyIcon name={technology} />
             </span>
             {technology}
