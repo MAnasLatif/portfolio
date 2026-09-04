@@ -146,6 +146,7 @@ export const articles = [
       "A practical way to connect interface decisions, domain boundaries, and operating constraints before implementation begins.",
     category: "Product engineering",
     readTime: "6 min",
+    publishedAt: "2026-08-29",
   },
   {
     slug: "useful-ai-agents-need-boundaries",
@@ -154,6 +155,7 @@ export const articles = [
       "Why explicit tools, evidence, validation, and stopping conditions matter more than an impressive prompt.",
     category: "AI engineering",
     readTime: "5 min",
+    publishedAt: "2026-08-29",
   },
   {
     slug: "developer-tools-should-disappear",
@@ -162,5 +164,6 @@ export const articles = [
       "Notes on reducing friction in local environments, command-line tools, and the routines around shipping software.",
     category: "Developer experience",
     readTime: "4 min",
+    publishedAt: "2026-08-29",
   },
 ] as const;
