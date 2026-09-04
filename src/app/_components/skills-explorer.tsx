@@ -47,7 +47,7 @@ export function SkillsExplorer({
 
   if (variant === "categorized") {
     return (
-      <div className="mt-10 divide-y divide-white/12 border-y border-white/12">
+      <div className="mt-10">
         {skills.map((skill, index) => (
           <section
             key={skill.name}
