@@ -1,10 +1,6 @@
-import TbArrowRight from "@mal-icons/react/tb/TbArrowRight";
 import type { Metadata } from "next";
-import Link from "next/link";
 
-import { articles } from "@/lib/portfolio-content";
-
-import { PageIntro } from "../_components/page-intro";
+import { ArticleList } from "./_components/article-list";
 
 export const metadata: Metadata = {
   title: "Blogs | M. Anas Latif",
@@ -14,44 +10,28 @@ export const metadata: Metadata = {
 
 export default function BlogsPage() {
   return (
-    <main className="relative z-10">
-      <PageIntro
-        index="04"
-        eyebrow="Field notes"
-        title="Blogs"
-        description="Original writing about the decisions around software: product boundaries, dependable AI workflows, and developer experience."
-      />
+    <main className="relative z-10 mx-auto max-w-300 px-5 pb-24 pt-28 sm:px-8 sm:pt-32 lg:px-12 lg:pb-32">
+      <header className="relative overflow-hidden pb-10 sm:pb-12">
+        <p className="flex items-center gap-3 font-mono text-[9px] uppercase tracking-[0.3em] text-white/35">
+          <span className="h-px w-5 bg-white/30" /> Writing / 001
+        </p>
+        <h1 className="mt-5 text-5xl font-black leading-none text-white sm:text-6xl">
+          Blog
+        </h1>
+        <p className="mt-4 max-w-2xl border-l border-white/25 pl-4 text-sm leading-6 text-white/48">
+          Original writing about product boundaries, dependable AI workflows,
+          and developer experience.
+        </p>
+        <span className="pointer-events-none absolute -right-7 -top-10 -z-10 hidden text-[10rem] font-black lowercase leading-none text-white/3 md:block">
+          blog
+        </span>
+      </header>
 
-      <section className="mx-auto max-w-360 px-5 pb-24 sm:px-8 lg:px-12 lg:pb-32">
-        <h2 className="sr-only">All articles</h2>
-        <div className="border-t border-white/12">
-          {articles.map((article, index) => (
-            <Link
-              key={article.slug}
-              href={`/blogs/${article.slug}`}
-              className="group grid gap-7 border-b border-white/12 py-10 lg:grid-cols-[100px_1fr_180px] lg:items-center"
-            >
-              <span className="font-mono text-xs text-white/25">
-                0{index + 1}
-              </span>
-              <span>
-                <span className="block max-w-3xl text-3xl font-bold leading-tight text-white/82 transition-colors group-hover:text-white sm:text-4xl">
-                  {article.title}
-                </span>
-                <span className="mt-4 block max-w-2xl leading-7 text-white/42">
-                  {article.summary}
-                </span>
-              </span>
-              <span className="flex justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-white/30 lg:block lg:text-right">
-                <span>{article.category}</span>
-                <span className="ml-3 inline-flex items-center justify-end gap-2">
-                  {article.readTime}
-                  <TbArrowRight size={13} />
-                </span>
-              </span>
-            </Link>
-          ))}
-        </div>
+      <section aria-labelledby="all-articles">
+        <h2 id="all-articles" className="sr-only">
+          All articles
+        </h2>
+        <ArticleList />
       </section>
     </main>
   );
