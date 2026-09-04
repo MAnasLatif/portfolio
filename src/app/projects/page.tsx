@@ -1,5 +1,5 @@
-import TbArrowUpRight from "@mal-icons/react/tb/TbArrowUpRight";
-import TbCode from "@mal-icons/react/tb/TbCode";
+import TbBrandGithub from "@mal-icons/react/tb/TbBrandGithub";
+import TbLink from "@mal-icons/react/tb/TbLink";
 import type { Metadata } from "next";
 
 import { projects } from "@/lib/portfolio-content";
@@ -70,7 +70,7 @@ function ProjectDetails({ index }: { index: number }) {
   const project = projects[index];
 
   return (
-    <div className="flex min-h-64 flex-col p-6 sm:p-7">
+    <div className="flex flex-col p-6 sm:p-7">
       <p className="font-mono text-[9px] uppercase tracking-[0.26em] text-white/28">
         {index === 0 ? "Featured project" : project.eyebrow}
       </p>
@@ -90,12 +90,12 @@ function ProjectDetails({ index }: { index: number }) {
           </span>
         ))}
       </div>
-      <div className="mt-auto flex items-center gap-5 border-t border-white/12 pt-4 font-mono text-[9px] uppercase tracking-[0.18em] text-white/32">
-        <span className="inline-flex items-center gap-1.5">
-          <TbCode size={13} /> Demo
+      <div className="-mx-6 -mb-6 mt-5 flex min-h-13 items-center gap-7 border-t border-white/12 bg-white/5 px-6 font-mono text-[10px] uppercase tracking-[0.2em] text-white/38 sm:-mx-7 sm:-mb-7 sm:px-7">
+        <span className="inline-flex items-center gap-2">
+          <TbBrandGithub size={17} /> Code
         </span>
-        <span className="inline-flex items-center gap-1.5">
-          Preview pending <TbArrowUpRight size={12} />
+        <span className="inline-flex items-center gap-2">
+          <TbLink size={17} /> Preview
         </span>
       </div>
     </div>
