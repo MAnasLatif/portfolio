@@ -184,149 +184,172 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-360 px-5 pb-24 sm:px-8 lg:px-12 lg:pb-32">
-        <div className="border-t border-white/12 pt-8">
-          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-white/32">
-            02 / Experience map
-          </p>
-          <h2 className="mt-5 max-w-3xl text-3xl font-black leading-none text-white sm:text-5xl">
-            Building products from architecture to operation.
-          </h2>
+      <div className="relative bg-[#03050a]/85">
+        <section className="relative mx-auto max-w-360 px-5 pb-24 pt-8 sm:px-8 lg:px-12 lg:pb-32">
+          <div className="border-t border-white/12 pt-8">
+            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-white/32">
+              02 / Experience map
+            </p>
+            <h2 className="mt-5 max-w-3xl text-3xl font-black leading-none text-white sm:text-5xl">
+              Building products from architecture to operation.
+            </h2>
 
-          <ol className="relative mt-14 space-y-14 before:absolute before:bottom-0 before:left-4 before:top-0 before:w-px before:bg-white/16 lg:mt-20 lg:space-y-20 lg:before:left-1/2">
-            {experience.map((position, index) => (
-              <li
-                key={`${position.company}-${position.role}`}
-                className="relative pl-10 lg:grid lg:grid-cols-[minmax(0,1fr)_80px_minmax(0,1fr)] lg:pl-0"
+            <ol className="relative mt-14 space-y-14 before:absolute before:bottom-0 before:left-4 before:top-0 before:w-px before:bg-white/16 lg:mt-20 lg:grid lg:grid-cols-[minmax(0,1fr)_112px_minmax(0,1fr)] lg:items-start lg:gap-y-14 lg:space-y-0 lg:before:hidden">
+              <svg
+                className="pointer-events-none absolute inset-y-0 left-1/2 hidden h-full w-28 -translate-x-1/2 text-white/25 lg:block"
+                viewBox="0 0 112 1000"
+                preserveAspectRatio="none"
+                fill="none"
+                aria-hidden="true"
               >
-                <span className="absolute left-4 top-6 h-2 w-2 -translate-x-1/2 bg-white/65 lg:left-1/2" />
-                <span
-                  className={`absolute top-6.75 hidden h-px w-10 bg-white/25 lg:block ${
-                    index % 2 === 0 ? "right-1/2" : "left-1/2"
-                  }`}
+                <path
+                  d="M56 0 C56 45 18 50 18 98 C18 165 94 185 94 257 C94 410 18 520 18 690 C18 850 56 900 56 1000"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  vectorEffect="non-scaling-stroke"
                 />
-
-                <article
-                  className={`border-t border-white/12 pt-6 lg:row-start-1 ${
-                    index % 2 === 0
-                      ? "lg:col-start-1 lg:pr-10"
-                      : "lg:col-start-3 lg:pl-10"
+                <circle cx="18" cy="98" r="4" fill="currentColor" />
+                <circle cx="94" cy="257" r="4" fill="currentColor" />
+                <circle cx="18" cy="690" r="4" fill="currentColor" />
+              </svg>
+              {experience.map((position, index) => (
+                <li
+                  key={`${position.company}-${position.role}`}
+                  className={`relative pl-10 lg:pl-0 ${
+                    index === 0
+                      ? "lg:col-start-1 lg:row-start-1 lg:pr-10"
+                      : index === 1
+                        ? "lg:col-start-3 lg:row-start-1 lg:mt-44 lg:pl-10"
+                        : "lg:col-start-1 lg:row-start-2 lg:pr-10"
                   }`}
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div>
-                      <a
-                        href={position.companyUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.22em] text-white/35 transition-colors hover:text-white"
-                      >
-                        {position.company} <TbArrowUpRight size={12} />
-                      </a>
-                      <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">
-                        {String(index + 1).padStart(2, "0")} /{" "}
-                        {position.employment}
-                      </p>
-                    </div>
-                    <div className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/28">
-                      <p>{position.period}</p>
-                      <p className="mt-2 inline-flex items-center gap-1.5 leading-5">
-                        <TbMapPin size={12} /> {position.location}
-                      </p>
-                    </div>
-                  </div>
-                  <h3 className="mt-5 text-2xl font-black leading-tight text-white sm:text-3xl">
-                    {position.role}
-                  </h3>
-                  <p className="mt-5 text-base leading-7 text-white/52">
-                    {position.summary}
-                  </p>
-                  <ul className="mt-6 space-y-3 border-l border-white/15 pl-5 text-sm leading-6 text-white/42">
-                    {position.highlights.map((highlight) => (
-                      <li key={highlight}>{highlight}</li>
-                    ))}
-                  </ul>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {position.technologies.map((technology) => (
-                      <span
-                        key={technology}
-                        className="border border-white/14 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-white/38"
-                      >
-                        {technology}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
-                    {position.projects.map((project) => (
-                      <a
-                        key={project.label}
-                        href={project.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/55 transition-colors hover:text-white"
-                      >
-                        {project.label} <TbArrowUpRight size={13} />
-                      </a>
-                    ))}
-                  </div>
-                </article>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+                  <span className="absolute left-4 top-6 h-2 w-2 -translate-x-1/2 bg-white/65 lg:hidden" />
 
-      <section className="relative mx-auto max-w-360 px-5 pb-24 sm:px-8 lg:px-12 lg:pb-32">
-        <div className="border-t border-white/12 pt-8">
-          <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-white/32">
-            03 / Education map
-          </p>
-          <h2 className="mt-5 max-w-3xl text-3xl font-black leading-none text-white sm:text-5xl">
-            Foundations in software engineering and computer science.
-          </h2>
+                  <article className="border-t border-white/12 pt-6">
+                    <div className="flex flex-wrap items-start justify-between gap-4">
+                      <div>
+                        <a
+                          href={position.companyUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.22em] text-white/35 transition-colors hover:text-white"
+                        >
+                          {position.company} <TbArrowUpRight size={12} />
+                        </a>
+                        <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.18em] text-white/25">
+                          {String(index + 1).padStart(2, "0")} /{" "}
+                          {position.employment}
+                        </p>
+                      </div>
+                      <div className="font-mono text-[9px] uppercase tracking-[0.16em] text-white/28">
+                        <p>{position.period}</p>
+                        <p className="mt-2 inline-flex items-center gap-1.5 leading-5">
+                          <TbMapPin size={12} /> {position.location}
+                        </p>
+                      </div>
+                    </div>
+                    <h3 className="mt-5 text-2xl font-black leading-tight text-white sm:text-3xl">
+                      {position.role}
+                    </h3>
+                    <p className="mt-5 text-base leading-7 text-white/52">
+                      {position.summary}
+                    </p>
+                    <ul className="mt-6 space-y-3 border-l border-white/15 pl-5 text-sm leading-6 text-white/42">
+                      {position.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                    <div className="mt-6 flex flex-wrap gap-2">
+                      {position.technologies.map((technology) => (
+                        <span
+                          key={technology}
+                          className="border border-white/14 px-2.5 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-white/38"
+                        >
+                          {technology}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+                      {position.projects.map((project) => (
+                        <a
+                          key={project.label}
+                          href={project.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-white/55 transition-colors hover:text-white"
+                        >
+                          {project.label} <TbArrowUpRight size={13} />
+                        </a>
+                      ))}
+                    </div>
+                  </article>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
 
-          <ol className="relative mt-14 space-y-14 before:absolute before:bottom-0 before:left-4 before:top-0 before:w-px before:bg-white/16 lg:mt-20 lg:space-y-20 lg:before:left-1/2">
-            {education.map((record, index) => (
-              <li
-                key={record.institution}
-                className="relative pl-10 lg:grid lg:grid-cols-[minmax(0,1fr)_80px_minmax(0,1fr)] lg:pl-0"
+        <section className="relative mx-auto max-w-360 px-5 pb-24 sm:px-8 lg:px-12 lg:pb-32">
+          <div className="border-t border-white/12 pt-8">
+            <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-white/32">
+              03 / Education map
+            </p>
+            <h2 className="mt-5 max-w-3xl text-3xl font-black leading-none text-white sm:text-5xl">
+              Foundations in software engineering and computer science.
+            </h2>
+
+            <ol className="relative mt-14 space-y-14 before:absolute before:bottom-0 before:left-4 before:top-0 before:w-px before:bg-white/16 lg:mt-20 lg:grid lg:grid-cols-[minmax(0,1fr)_112px_minmax(0,1fr)] lg:items-start lg:space-y-0 lg:before:hidden">
+              <svg
+                className="pointer-events-none absolute inset-y-0 left-1/2 hidden h-full w-28 -translate-x-1/2 text-white/25 lg:block"
+                viewBox="0 0 112 1000"
+                preserveAspectRatio="none"
+                fill="none"
+                aria-hidden="true"
               >
-                <span className="absolute left-4 top-6 h-2 w-2 -translate-x-1/2 bg-white/65 lg:left-1/2" />
-                <span
-                  className={`absolute top-6.75 hidden h-px w-10 bg-white/25 lg:block ${
-                    index % 2 === 0 ? "right-1/2" : "left-1/2"
-                  }`}
+                <path
+                  d="M56 0 C56 105 18 125 18 234 C18 410 94 470 94 655 C94 820 56 875 56 1000"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  vectorEffect="non-scaling-stroke"
                 />
-                <article
-                  className={`border-t border-white/12 pt-6 lg:row-start-1 ${
-                    index % 2 === 0
+                <circle cx="18" cy="234" r="4" fill="currentColor" />
+                <circle cx="94" cy="655" r="4" fill="currentColor" />
+              </svg>
+              {education.map((record, index) => (
+                <li
+                  key={record.institution}
+                  className={`relative pl-10 lg:row-start-1 lg:pl-0 ${
+                    index === 0
                       ? "lg:col-start-1 lg:pr-10"
-                      : "lg:col-start-3 lg:pl-10"
+                      : "lg:col-start-3 lg:mt-32 lg:pl-10"
                   }`}
                 >
-                  <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/28">
-                    {String(index + 1).padStart(2, "0")} / {record.period}
-                  </p>
-                  <a
-                    href={record.institutionUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-xl font-bold text-white/88 transition-colors hover:text-white sm:text-2xl"
-                  >
-                    {record.institution} <TbArrowUpRight size={15} />
-                  </a>
-                  <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.16em] text-white/32">
-                    {record.qualification}
-                  </p>
-                  <p className="mt-4 max-w-3xl text-sm leading-6 text-white/42">
-                    {record.detail}
-                  </p>
-                </article>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+                  <span className="absolute left-4 top-6 h-2 w-2 -translate-x-1/2 bg-white/65 lg:hidden" />
+                  <article className="border-t border-white/12 pt-6">
+                    <p className="font-mono text-[9px] uppercase tracking-[0.18em] text-white/28">
+                      {String(index + 1).padStart(2, "0")} / {record.period}
+                    </p>
+                    <a
+                      href={record.institutionUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 inline-flex items-center gap-2 text-xl font-bold text-white/88 transition-colors hover:text-white sm:text-2xl"
+                    >
+                      {record.institution} <TbArrowUpRight size={15} />
+                    </a>
+                    <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.16em] text-white/32">
+                      {record.qualification}
+                    </p>
+                    <p className="mt-4 max-w-3xl text-sm leading-6 text-white/42">
+                      {record.detail}
+                    </p>
+                  </article>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      </div>
 
       <section className="bg-white text-[#080a0f]">
         <div className="mx-auto max-w-360 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
