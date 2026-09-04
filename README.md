@@ -22,7 +22,7 @@ original editorial content, and verified links to public work.
 | Database and data access | None; portfolio content is local and typed |
 | Authentication and authorization | None |
 | Application boundary | Server Components; no Server Actions required yet |
-| HTTP APIs and external services | None |
+| HTTP APIs and external services | Static raw Markdown delivery only; no external services |
 | Realtime | None |
 | Email | Local `mailto:` handoff; no delivery service |
 | Uploads and storage | None |
@@ -123,6 +123,10 @@ Article metadata belongs in `src/lib/portfolio-content.ts`. Article body copy is
 authored as Markdown in `src/app/blogs/_content/<slug>.md`; every Markdown
 filename must match a declared article slug. The static article route loads the
 file server-side and renders semantic, styled HTML with `react-markdown`.
+Known article sources are also available as plain text at
+`/sblogs/<slug>.md`. This static Route Handler matches filenames against the
+typed article catalogue before reading from disk and serves the source with a
+`text/plain` content type.
 
 If future requirements introduce untrusted input, validate it with Zod at the
 boundary. Keep privileged operations server-only and return serializable DTOs

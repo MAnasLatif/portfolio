@@ -21,7 +21,7 @@ routes: Home, About, Blogs, and Projects.
 | Authentication | None |
 | Authorization | None |
 | Application boundary | Server Components; no Server Actions required yet |
-| HTTP APIs | None |
+| HTTP APIs | Static raw Markdown delivery at `/sblogs/<slug>.md` |
 | External services | None |
 | Realtime | None |
 | Email | Local `mailto:` handoff; no delivery service |
@@ -60,6 +60,11 @@ slug through `generateStaticParams`, reads the matching Markdown file at build
 time, and renders it with `react-markdown`; unknown slugs resolve to the shared
 not-found boundary. Article pages retain the global Canvas background beneath a
 translucent editorial reading surface.
+
+The `/sblogs/[filename]` Route Handler provides the same known article sources
+as raw `text/plain` responses for file-like `.md` URLs. It is statically
+generated, rejects filenames absent from the typed article catalogue, and never
+passes an unvalidated request path to the filesystem loader.
 
 Public claims are limited to information verified from the linked GitHub and
 LinkedIn profiles. Project records are typed local content and may use clearly
