@@ -7,7 +7,8 @@ original editorial content, and verified links to public work.
 
 ## Portfolio sections
 
-- Home overview with capabilities, selected projects, writing, and principles
+- Home overview with a product perspective, capabilities, selected projects,
+  writing, and principles
 - About and professional background
 - Projects and blogs with article detail pages
 - Shared contact paths through GitHub and LinkedIn

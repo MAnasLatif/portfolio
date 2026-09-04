@@ -5,6 +5,7 @@ import { articles, projects, skills } from "@/lib/portfolio-content";
 
 import { ContactForm } from "./_components/contact-form";
 import { HeroHeader } from "./_components/hero-header";
+import { ProductPerspective } from "./_components/product-perspective";
 import { SkillsExplorer } from "./_components/skills-explorer";
 import { TechnologyMarquee } from "./_components/technology-marquee";
 
@@ -20,6 +21,8 @@ export default function HomePage() {
   return (
     <main>
       <HeroHeader />
+
+      <ProductPerspective />
 
       <section className="relative z-10 mx-auto max-w-360 px-5 py-24 sm:px-8 lg:px-12 lg:py-32">
         <div className="grid gap-10 border-b border-white/12 pb-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
