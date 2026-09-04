@@ -39,6 +39,7 @@ the rationale behind the intentionally small foundation.
 - TypeScript with strict mode
 - Tailwind CSS v4
 - Biome
+- react-markdown
 - Zod
 
 No UI library, icon package, animation runtime, database client, authentication
@@ -57,9 +58,9 @@ docs/
 └── temp/            # Ignored AI-created temporary files
 ```
 
-Route-specific components and article bodies remain colocated with their route.
-The site shell lives in `src/components/`, while project, article summary, skill,
-and principle data shared by multiple routes lives in
+Route-specific components and Markdown article bodies remain colocated with
+their route. The site shell lives in `src/components/`, while project, article
+metadata, skill, and principle data shared by multiple routes lives in
 `src/lib/portfolio-content.ts`.
 
 ## Requirements
@@ -117,6 +118,11 @@ boundaries. The portrait loads a lower-quality responsive image first, then
 upgrades only the visible breakpoint image during browser idle time. The contact
 form opens the visitor's configured email application; the site does not
 transmit or store message data.
+
+Article metadata belongs in `src/lib/portfolio-content.ts`. Article body copy is
+authored as Markdown in `src/app/blogs/_content/<slug>.md`; every Markdown
+filename must match a declared article slug. The static article route loads the
+file server-side and renders semantic, styled HTML with `react-markdown`.
 
 If future requirements introduce untrusted input, validate it with Zod at the
 boundary. Keep privileged operations server-only and return serializable DTOs
