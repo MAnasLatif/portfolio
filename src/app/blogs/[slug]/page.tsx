@@ -7,6 +7,11 @@ import { articles } from "@/lib/portfolio-content";
 
 import { articleContent } from "../_content/articles";
 
+const articleDateFormatter = new Intl.DateTimeFormat("en-US", {
+  dateStyle: "medium",
+  timeZone: "UTC",
+});
+
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
 };
@@ -53,7 +58,14 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             All writing
           </Link>
           <p className="mt-12 font-mono text-[10px] uppercase tracking-[0.22em] text-white/35">
-            {article.category} / {article.readTime} read
+            {article.category}
+            {" / "}
+            <time dateTime={article.publishedAt}>
+              {articleDateFormatter.format(
+                new Date(`${article.publishedAt}T00:00:00Z`),
+              )}
+            </time>{" "}
+            / {article.readTime} read
           </p>
           <h1 className="mt-8 text-4xl font-black leading-[0.95] text-white sm:text-6xl lg:text-7xl">
             {article.title}

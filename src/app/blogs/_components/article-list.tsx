@@ -7,6 +7,11 @@ import { useDeferredValue, useState } from "react";
 
 import { articles } from "@/lib/portfolio-content";
 
+const articleDateFormatter = new Intl.DateTimeFormat("en-US", {
+  dateStyle: "medium",
+  timeZone: "UTC",
+});
+
 export function ArticleList() {
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query.trim().toLocaleLowerCase());
@@ -64,6 +69,12 @@ export function ArticleList() {
                 </span>
                 <span className="mt-4 flex flex-wrap items-center gap-2 font-mono text-[9px] uppercase tracking-[0.12em] text-white/28">
                   <span>{article.category}</span>
+                  <span aria-hidden="true">·</span>
+                  <time dateTime={article.publishedAt}>
+                    {articleDateFormatter.format(
+                      new Date(`${article.publishedAt}T00:00:00Z`),
+                    )}
+                  </time>
                   <span aria-hidden="true">·</span>
                   <span>{article.readTime} read</span>
                 </span>
