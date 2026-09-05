@@ -124,9 +124,9 @@ authored as Markdown in `src/app/blogs/_content/<slug>.md`; every Markdown
 filename must match a declared article slug. The static article route loads the
 file server-side and renders semantic, styled HTML with `react-markdown`.
 Known article sources are also available as plain text at
-`/sblogs/<slug>.md`. This static Route Handler matches filenames against the
-typed article catalogue before reading from disk and serves the source with a
-`text/plain` content type.
+`/blogs/<slug>/md`. This static Route Handler matches slugs against the typed
+article catalogue before reading from disk and serves the source with a
+`text/plain` content type and an inline `<slug>.md` filename.
 
 If future requirements introduce untrusted input, validate it with Zod at the
 boundary. Keep privileged operations server-only and return serializable DTOs
