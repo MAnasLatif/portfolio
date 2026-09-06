@@ -1,77 +1,96 @@
 # M. Anas Latif Portfolio
 
-The public developer portfolio for M. Anas Latif, built for recruiters,
-prospective clients, and engineering collaborators. It is a statically generated
-multipage portfolio with a decorative animated starfield, responsive navigation,
-original editorial content, and verified links to public work.
+A fast, statically generated portfolio for M. Anas Latif, a software engineer,
+product builder, and UX designer. The site presents professional experience,
+technical capabilities, selected projects, and long-form writing through a dark,
+responsive editorial interface.
 
-## Portfolio sections
+- [GitHub](https://github.com/MAnasLatif)
+- [LinkedIn](https://www.linkedin.com/in/manaslatif/)
+- [Architecture](docs/architecture.md)
 
-- Home overview with a product perspective, capabilities, selected projects,
-  writing, and principles
-- About and professional background
-- Projects and blogs with article detail pages
-- Shared contact paths through GitHub and LinkedIn
+## Highlights
 
-## Architecture decisions
+- Statically generated pages with no request-time compilation
+- Responsive portfolio, experience, education, projects, and writing views
+- Markdown-authored articles rendered as accessible HTML
+- Plain-text Markdown endpoints at `/blogs/<slug>/md`
+- Animated Canvas starfield with reduced-motion and page-visibility support
+- Route-aware desktop and mobile navigation
+- Optimized responsive portrait loading
+- Local `mailto:` contact handoff with no message storage or external service
 
-| Concern | Decision |
+## Technology
+
+| Area | Tools |
 | --- | --- |
-| Application type | Public developer portfolio |
-| Package managers | npm and Bun |
-| Database and data access | None; portfolio content is local and typed |
-| Authentication and authorization | None |
-| Application boundary | Server Components; no Server Actions required yet |
-| HTTP APIs and external services | Static raw Markdown delivery only; no external services |
-| Realtime | None |
-| Email | Local `mailto:` handoff; no delivery service |
-| Uploads and storage | None |
+| Framework | Next.js 16 App Router, React 19 |
+| Language | TypeScript with strict mode |
+| Styling | Tailwind CSS v4 |
+| Motion | Motion, Canvas API |
+| Content | Markdown, react-markdown |
+| Icons | `@mal-icons/react` |
+| Validation | Zod |
+| Quality | Biome, TypeScript |
 | Deployment | Vercel |
-| Security and privacy | No secrets or private personal data in source |
 
-See [the architecture record](docs/architecture.md) for module ownership and
-the rationale behind the intentionally small foundation.
+## Routes
 
-## Technology stack
+| Route | Purpose | Rendering |
+| --- | --- | --- |
+| `/` | Profile overview, selected work, writing, and contact | Static |
+| `/about` | Professional experience, education, and skills | Static |
+| `/projects` | Selected project work | Static |
+| `/blogs` | Searchable article index | Static |
+| `/blogs/<slug>` | Formatted article page | Pre-generated |
+| `/blogs/<slug>/md` | Raw article source served as `text/plain` | Pre-generated |
 
-- Next.js 16 App Router
-- React 19
-- TypeScript with strict mode
-- Tailwind CSS v4
-- Biome
-- react-markdown
-- Zod
+Every supported route is emitted during `next build`. Dynamic blog segments use
+`generateStaticParams` and reject unknown slugs, preventing on-demand rendering
+or compilation after deployment.
 
-No UI library, icon package, animation runtime, database client, authentication
-library, or client data-fetching library is installed. The shared space
-background uses a small Canvas loop, so it adds no runtime dependency.
+## Architecture
 
-## Repository structure
+The application uses React Server Components by default. Client Components are
+limited to browser-dependent behavior such as the animated background,
+responsive navigation, progressive portrait loading, article search, contact
+handoff, and framework recovery boundaries.
+
+Portfolio content is local and typed. There is no database, authentication,
+realtime connection, upload service, or external data API. The only Route
+Handler serves allowlisted article Markdown as a pre-generated plain-text
+response.
+
+See [docs/architecture.md](docs/architecture.md) for module ownership,
+boundaries, and durable technical decisions.
+
+## Project Structure
 
 ```text
 src/
-├── app/             # Routes, route content, metadata, and boundaries
-├── components/      # Shared site shell components
-└── lib/             # Typed shared portfolio content and infrastructure
-docs/
-├── architecture.md  # Durable architecture decisions
-└── temp/            # Ignored AI-created temporary files
+├── app/
+│   ├── _components/       # Shared route-level presentation
+│   ├── about/             # Experience, education, and skills
+│   ├── blogs/             # Articles, Markdown, and raw responses
+│   └── projects/          # Project catalogue
+├── components/            # Site shell and cross-route UI
+└── lib/                   # Typed content and infrastructure
+public/                    # Brand, portrait, and favicon assets
+docs/                      # Architecture and operational documentation
 ```
 
-Route-specific components and Markdown article bodies remain colocated with
-their route. The site shell lives in `src/components/`, while project, article
-metadata, skill, and principle data shared by multiple routes lives in
-`src/lib/portfolio-content.ts`.
+## Getting Started
 
-## Requirements
+### Requirements
 
 - Node.js 20.9 or newer
-- npm
-- Bun 1.3 or newer when using the Bun workflow
+- npm, or Bun 1.3 or newer
 
-## Getting started
+No environment variables are required for local development.
 
-Install with either supported package manager:
+### Install
+
+Use either supported package manager:
 
 ```bash
 npm install
@@ -81,112 +100,80 @@ npm install
 bun install
 ```
 
-No environment variables are currently required. `.env.example` records this
-empty contract and must be updated when configuration is introduced.
+Both lockfiles are committed and must remain synchronized after dependency
+changes.
 
-Start the development server:
+### Develop
 
 ```bash
 npm run dev
 ```
 
-The application is available at `http://localhost:3000` by default.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Commands
+To test the optimized production build locally:
 
-| npm | Bun | Purpose |
+```bash
+npm run build
+npm run start
+```
+
+## Available Scripts
+
+| npm | Bun | Description |
 | --- | --- | --- |
 | `npm run dev` | `bun run dev` | Start the development server |
-| `npm run build` | `bun run build` | Create a production build |
+| `npm run build` | `bun run build` | Create the optimized production build |
 | `npm run start` | `bun run start` | Serve the production build |
-| `npm run check` | `bun run check` | Run Biome formatting and lint checks |
-| `npm run format` | `bun run format` | Apply Biome formatting |
+| `npm run check` | `bun run check` | Run Biome checks |
+| `npm run format` | `bun run format` | Format the repository with Biome |
 | `npm run lint` | `bun run lint` | Run Biome lint rules |
 | `npm run typecheck` | `bun run typecheck` | Run strict TypeScript checks |
 
-No automated test suite exists yet because the portfolio has no domain logic.
-Static generation, strict types, Biome, and browser checks cover the current
-surface. Add focused Bun tests with the first behavior that needs them.
+## Writing Articles
 
-## Data and API conventions
+Article metadata is defined in
+[`src/lib/portfolio-content.ts`](src/lib/portfolio-content.ts). Article bodies
+live in `src/app/blogs/_content/` and use the article slug as the filename.
 
-The portfolio is statically generated. Server Components are the default, and
-there are no Server Actions, runtime APIs, or external service adapters. The
-only Route Handler emits pre-generated raw Markdown. The Client Components are
-the Canvas animation, responsive navigation, progressive hero portrait, contact
-form mailto handoff, and required error boundaries. The portrait loads a
-lower-quality responsive image first, then upgrades only the visible breakpoint
-image during browser idle time. The contact form opens the visitor's configured
-email application; the site does not transmit or store message data.
+To publish an article:
 
-Every public page and known raw Markdown response is generated during
-`next build`. Dynamic blog segments enumerate their supported slugs and disable
-runtime parameters, so an unknown article returns `404` instead of being
-compiled or rendered on first request.
+1. Add its typed metadata to `articles` in
+   [`src/lib/portfolio-content.ts`](src/lib/portfolio-content.ts).
+2. Add the matching Markdown file at
+   `src/app/blogs/_content/<slug>.md`.
+3. Run `npm run build` to verify both the formatted page and raw Markdown route
+   are generated.
 
-Article metadata belongs in `src/lib/portfolio-content.ts`. Article body copy is
-authored as Markdown in `src/app/blogs/_content/<slug>.md`; every Markdown
-filename must match a declared article slug. The static article route loads the
-file server-side and renders semantic, styled HTML with `react-markdown`.
-Known article sources are also available as plain text at
-`/blogs/<slug>/md`. This static Route Handler matches slugs against the typed
-article catalogue before reading from disk and serves the source with a
-`text/plain` content type and an inline `<slug>.md` filename.
+For example, `designing-software-as-a-system.md` produces:
 
-If future requirements introduce untrusted input, validate it with Zod at the
-boundary. Keep privileged operations server-only and return serializable DTOs
-to client components. Record any new API or data decision in this README and
-`docs/architecture.md`.
+- `/blogs/designing-software-as-a-system`
+- `/blogs/designing-software-as-a-system/md`
 
-## Environment contract
+## Quality Checks
 
-Server configuration belongs in `src/lib/env/server.ts`; browser-safe
-`NEXT_PUBLIC_` configuration belongs in `src/lib/env/client.ts`. When a variable
-is added, removed, or renamed, synchronize both the applicable schema and:
+Run the complete local quality gate before submitting a change:
 
-- `.env.example`
-- this README
-- deployment and CI configuration
-- tests and mocks
+```bash
+npm run format
+npm run lint
+npm run typecheck
+npm run build
+```
 
-Never commit production credentials.
+The current portfolio has no domain behavior requiring an automated test suite.
+Static generation, strict types, Biome, production builds, and browser checks
+cover the existing surface.
 
 ## Deployment
 
-The target platform is Vercel. Use `npm run build` as the production build gate;
-Next.js emits the `.next/` output consumed by the platform. No deployment
-environment variables or migrations are currently required. Roll back by
-promoting the last known-good Vercel deployment.
-
-## AI skill artifacts
-
-Installed skill implementations live under the ignored `/.agents/` directory.
-The reproducible selection is committed in `skills-lock.json`.
-
-Durable project skills:
-
-- `find-skills` from `vercel-labs/skills` for relevant skill discovery
-- `tailwind-v4` from `MAnasLatif/skills` for future design-system work
-- `motion-react` from `MAnasLatif/skills` for future accessible animation work
-- `next-dev-loop` from `vercel/next.js` for runtime verification
-
-The Motion skill does not imply a runtime dependency; install `motion` only when
-a confirmed interaction requires it.
-
-All disposable AI-created files must stay under the ignored `docs/temp/`
-directory and must never be force-added to Git.
-
-## Troubleshooting
-
-- Confirm `node --version` satisfies the engine requirement when installation
-  or Next.js startup fails.
-- Remove `.next/` and rerun `npm run build` when generated route output is stale.
-- Run `npm install` and `bun install` after dependency changes to keep both
-  committed lockfiles synchronized.
-- Keep server environment imports out of Client Components.
+The application targets Vercel and requires no deployment environment variables
+or migrations. Vercel consumes the `.next/` output produced by `npm run build`.
+All known pages and raw Markdown responses are pre-rendered and cacheable after
+deployment.
 
 ## Contributing
 
-Read `AGENTS.md` before changing the application. Every change should preserve
-the Server Component default, route colocation, minimal dependency policy, and
-the documented validation commands.
+Read [AGENTS.md](AGENTS.md) before making changes. Keep Server Components as the
+default, colocate route-specific code, avoid unnecessary dependencies, and
+preserve the npm and Bun workflows.
