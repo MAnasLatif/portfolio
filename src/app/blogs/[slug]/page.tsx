@@ -18,6 +18,8 @@ type ArticlePageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 const markdownComponents = {
   h2: ({ children }) => (
     <h2 className="mt-16 text-2xl font-black leading-tight text-white first:mt-0 sm:mt-20 sm:text-3xl">

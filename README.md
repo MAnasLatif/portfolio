@@ -111,13 +111,18 @@ surface. Add focused Bun tests with the first behavior that needs them.
 ## Data and API conventions
 
 The portfolio is statically generated. Server Components are the default, and
-there are no Server Actions, Route Handlers, internal APIs, or external service
-adapters. The Client Components are the Canvas animation, responsive navigation,
-progressive hero portrait, contact form mailto handoff, and required error
-boundaries. The portrait loads a lower-quality responsive image first, then
-upgrades only the visible breakpoint image during browser idle time. The contact
-form opens the visitor's configured email application; the site does not
-transmit or store message data.
+there are no Server Actions, runtime APIs, or external service adapters. The
+only Route Handler emits pre-generated raw Markdown. The Client Components are
+the Canvas animation, responsive navigation, progressive hero portrait, contact
+form mailto handoff, and required error boundaries. The portrait loads a
+lower-quality responsive image first, then upgrades only the visible breakpoint
+image during browser idle time. The contact form opens the visitor's configured
+email application; the site does not transmit or store message data.
+
+Every public page and known raw Markdown response is generated during
+`next build`. Dynamic blog segments enumerate their supported slugs and disable
+runtime parameters, so an unknown article returns `404` instead of being
+compiled or rendered on first request.
 
 Article metadata belongs in `src/lib/portfolio-content.ts`. Article body copy is
 authored as Markdown in `src/app/blogs/_content/<slug>.md`; every Markdown

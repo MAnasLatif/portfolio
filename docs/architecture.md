@@ -56,9 +56,10 @@ boundaries are client-side so they can log failures and invoke recovery.
 All top-level routes are statically generated. Blog article metadata is shared
 with Home, while article bodies are authored as route-owned Markdown under
 `src/app/blogs/_content/`. The dynamic article route enumerates every supported
-slug through `generateStaticParams`, reads the matching Markdown file at build
-time, and renders it with `react-markdown`; unknown slugs resolve to the shared
-not-found boundary. Article pages retain the global Canvas background beneath a
+slug through `generateStaticParams`, disables runtime dynamic parameters, reads
+the matching Markdown file at build time, and renders it with `react-markdown`;
+unknown slugs resolve to the shared not-found boundary without on-demand
+generation. Article pages retain the global Canvas background beneath a
 translucent editorial reading surface.
 
 The `/blogs/[slug]/md` Route Handler provides the same known article sources as
